@@ -82,5 +82,5 @@ public interface IOrderService extends IService<Order> {
      * @param search 搜索内容
      * @return
      */
-    BasePageDTO<OrderVO> listByPage(PageInfo pageInfo, String search);
+    BasePageDTO<Order> listByPage(PageInfo pageInfo, String search);
 }

@@ -150,10 +150,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 	}
 
 	@Override
-	public BasePageDTO<OrderVO> listByPage(PageInfo pageInfo, String search) {
-		Page<OrderVO> page = new Page<>(pageInfo.getCurrent(), pageInfo.getLimit());
-		List<OrderVO> adverts = orderMapper.listByPage(pageInfo, search, page);
+	public BasePageDTO<Order> listByPage(PageInfo pageInfo, String search) {
+		Page<Order> page = new Page<>(pageInfo.getCurrent(), pageInfo.getLimit());
+		List<Order> orders = orderMapper.listByPage(pageInfo, search, page);
 		pageInfo.setTotal(page.getTotal());
-		return new BasePageDTO<OrderVO>(pageInfo, adverts);
+		return new BasePageDTO<Order>(pageInfo, orders);
 	}
 }

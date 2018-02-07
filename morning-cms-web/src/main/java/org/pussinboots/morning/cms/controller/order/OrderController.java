@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  */
 @Controller
-@RequestMapping(value = "/order")
+@RequestMapping(value = "/system/order/list")
 @Api(value = "订单管理", description = "订单管理")
 public class OrderController {
 
@@ -34,17 +34,17 @@ public class OrderController {
     private IOrderService orderService;
 
     @ApiOperation(value = "订单列表页面", notes = "订单列表页面")
-    @RequiresPermissions("order:view")
+    @RequiresPermissions("order:list:view")
     @GetMapping(value = "/view")
     public String getOrderPage(Model model){
         return "/modules/order/order_list";
     }
 
     @ApiOperation(value = "获取订单列表", notes = "根据分页信息/搜索内容获取订单列表")
-    @RequiresPermissions("order:view")
+    @RequiresPermissions("order:list:view")
     @GetMapping(value = "/")
     public Object listOrder(PageInfo pageInfo, @RequestParam(required = false, value = "search") String search){
-        BasePageDTO<OrderVO> basePageDTO = orderService.listByPage(pageInfo, search);
+        BasePageDTO<Order> basePageDTO = orderService.listByPage(pageInfo, search);
         return new CmsPageResult(basePageDTO.getList(), basePageDTO.getPageInfo().getTotal());
     }
 }
