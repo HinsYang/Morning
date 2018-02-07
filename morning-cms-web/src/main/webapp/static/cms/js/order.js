@@ -72,13 +72,13 @@ window.actionEvents = {
 		status_start(index, row.advertId);
 	},
 	'click .edit' : function(e, value, row, index) {
-		layer_show(row.name, baselocation + '/online/advert/' + row.advertId + '/edit', 900, 650)
+		layer_show(row.name, baselocation + '/system/order/list/' + row.orderId + '/edit', 900, 650)
 	},
 	'click .remove' : function(e, value, row, index) {
 		admin_delete(index, row.advertId);
 	},
 	'click .log' : function(e, value, row, index) {
-		window.location.href = baselocation + '/online/advert/' + row.advertId + '/detail/view';
+		window.location.href = baselocation + '/system/order/list/' + row.orderId + '/detail/view';
 	}
 };
 

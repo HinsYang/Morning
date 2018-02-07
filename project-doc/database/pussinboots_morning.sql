@@ -465,7 +465,7 @@ CREATE TABLE `cms_user` (
 -- ----------------------------
 -- Records of cms_user
 -- ----------------------------
-INSERT INTO `cms_user` VALUES ('1', '1', 'admin', 'd81c31b9348c3da513177a781703767e', 'Dts7jk', '叮咚', 'yeungchihang', '0', '22', 'images/avatar/20170710/1499664515370.jpg', '1', '810170512@qq.com', '18857105127', '2017-07-30 15:45:59', '192.168.0.110', '2016-10-27 23:11:43', 'yeungchihang', '2017-07-10 05:28:52', '叮咚');
+INSERT INTO `cms_user` VALUES ('1', '1', 'admin', 'd81c31b9348c3da513177a781703767e', 'Dts7jk', '叮咚', 'yeungchihang', '0', '22', 'default/avatar/avatar_6.jpg', '1', '810170512@qq.com', '18857105127', '2017-07-30 15:45:59', '192.168.0.110', '2016-10-27 23:11:43', 'yeungchihang', '2017-07-10 05:28:52', '叮咚');
 INSERT INTO `cms_user` VALUES ('14', '4', 'test', 'aa7b19dfac77ec06a669c6a3d44f3c82', 'oFkuwy', '大撒旦', '阿萨德', '1', '0', 'default/avatar/avatar_6.jpg', '1', '15632831549@qq.com', '18857105127', null, null, '2017-04-06 12:55:44', '叮咚', '2017-04-07 05:04:52', '叮咚');
 
 -- ----------------------------
