@@ -65,4 +65,25 @@
 			product_number = #{productNumber}
 		AND	show_in_shelve = #{status}	
 	</select>
+
+	<select id="listByPage" resultMap="BaseResultMap">
+		SELECT
+		product_id,
+		product_number,
+		label_id,
+		name,
+		show_price,
+		introduce,
+		pic_img,
+		create_time,
+		create_by,
+		update_time,
+		update_by
+		FROM
+		os_product
+		<where>
+			1=1
+		</where>
+		ORDER BY update_time DESC
+	</select>
 </mapper>
