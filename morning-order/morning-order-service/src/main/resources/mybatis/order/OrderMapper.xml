@@ -270,6 +270,5 @@
 			1=1
 		</where>
 		ORDER BY update_time DESC
-		LIMIT #{pageInfo.offset}, #{pageInfo.limit}
 	</select>
 </mapper>
