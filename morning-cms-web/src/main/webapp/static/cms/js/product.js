@@ -5,6 +5,21 @@ function timeFormatter(value) {
 	return new Date(value).Format("yyyy-MM-dd HH:mm:ss");
 }
 
+function labelIdFormatter(value) {
+	if (value == 1){
+        return '<span class="label label-danger">热销</span>'
+	}
+	else if (value == 2){
+        return '<span class="label label-info">新品</span>'
+	}
+	else if (value == 3){
+        return '<span class="label label-primary">现货</span>'
+	}
+	else if (value == 4){
+        return '<span class="label label-warning">有赠品</span>'
+	}
+}
+
 function actionFormatter(value, row, index) {
 	if (row.status == 1) {
 		return [

@@ -21,12 +21,36 @@ function shipmentTimeFormatter(value) {
         return '<span class="label label-info">不限送货时间</span>'
 	}
 }
-function shipmentTimeFormatter(value) {
+function shipmentTypeFormatter(value) {
     if (value == 1){
-        return '<span class="label label-info">运费</span>'
+        return '<span class="label label-info">附加运费</span>'
     }
     else if (value == 0) {
         return '<span class="label label-info">免运费</span>'
+    }
+}
+
+function invoiceTypeFormatter(value) {
+	if (value == 1){
+		return '<span class="label label-info">不开发票</span>'
+	}
+	else if (value == 2){
+		return '<span class="label label-info">电子发票</span>'
+	}
+	else if (value == 3){
+        return '<span class="label label-info">普通发票</span>'
+	}
+}
+
+function orderStatusFormatter(value) {
+    if (value == 1){
+        return '<span class="label label-info">订单提交</span>'
+    }
+    else if (value == 2){
+        return '<span class="label label-info">付款</span>'
+    }
+    else if (value == 12){
+        return '<span class="label label-info">手动取消订单</span>'
     }
 }
 

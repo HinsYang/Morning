@@ -47,9 +47,11 @@ public class ProductController extends BaseController {
 		return "/modules/product/product_list";
 	}
 
-	@ApiOperation(value = "获取订单列表", notes = "根据分页信息/搜索内容获取订单列表")
+
+	@ApiOperation(value = "获取产品列表", notes = "根据分页信息/搜索内容获取产品列表")
 	@RequiresPermissions("product:list:view")
 	@GetMapping(value = "/")
+    @ResponseBody
 	public Object listProduct(PageInfo pageInfo, @RequestParam(required = false, value = "search") String search){
 		BasePageDTO<Product> basePageDTO = productService.listByPage(pageInfo, search);
 		return new CmsPageResult(basePageDTO.getList(), basePageDTO.getPageInfo().getTotal());

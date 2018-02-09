@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -42,6 +43,7 @@ public class OrderController {
     @ApiOperation(value = "获取订单列表", notes = "根据分页信息/搜索内容获取订单列表")
     @RequiresPermissions("order:list:view")
     @GetMapping(value = "/")
+    @ResponseBody
     public Object listOrder(PageInfo pageInfo, @RequestParam(required = false, value = "search") String search){
         BasePageDTO<Order> basePageDTO = orderService.listByPage(pageInfo, search);
         return new CmsPageResult(basePageDTO.getList(), basePageDTO.getPageInfo().getTotal());
