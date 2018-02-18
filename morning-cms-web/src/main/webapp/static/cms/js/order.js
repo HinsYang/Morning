@@ -49,6 +49,21 @@ function orderStatusFormatter(value) {
     else if (value == 2){
         return '<span class="label label-info">付款</span>'
     }
+    else if (value == 3){
+        return '<span class="label label-info">拣取配货</span>'
+    }
+    else if (value == 4){
+        return '<span class="label label-info">商品出库</span>'
+    }
+    else if (value == 5){
+        return '<span class="label label-info">等待收货</span>'
+    }
+    else if (value == 6){
+        return '<span class="label label-info">确认收货</span>'
+    }
+    else if (value == 11){
+        return '<span class="label label-info">自动取消订单</span>'
+    }
     else if (value == 12){
         return '<span class="label label-info">手动取消订单</span>'
     }
@@ -63,7 +78,7 @@ function actionFormatter(value, row, index) {
 			'<a class="edit m-r-sm text-warning" href="javascript:void(0)" title="编辑">',
 			'<i class="glyphicon glyphicon-edit"></i>',
 			'</a>',
-			'<a class="remove m-r-sm text-danger" href="javascript:void(0)" title="删除">',
+			'<a class="remove m-r-sm text-danger" href="javascript:void(0)" title="取消订单">',
 			'<i class="glyphicon glyphicon-remove"></i>',
 			'</a>',
 			'<a class="log m-r-sm text-primary" href="javascript:void(0)" title="广告详情">',
@@ -78,7 +93,7 @@ function actionFormatter(value, row, index) {
 			'<a class="edit m-r-sm text-warning" href="javascript:void(0)" title="编辑">',
 			'<i class="glyphicon glyphicon-edit"></i>',
 			'</a>',
-			'<a class="remove m-r-sm text-danger" href="javascript:void(0)" title="删除">',
+			'<a class="remove m-r-sm text-danger" href="javascript:void(0)" title="取消订单">',
 			'<i class="glyphicon glyphicon-remove"></i>',
 			'</a>',
 			'<a class="log m-r-sm text-primary" href="javascript:void(0)" title="广告详情">',
@@ -173,22 +188,22 @@ function status_start(index, value) {
 }
 
 /**
- * 删除广告
+ * 取消订单
  */
 function admin_delete(index, value) {
-	layer.confirm('确认要删除该广告吗？', {
+	layer.confirm('确认要取消该订单吗？', {
 		btn : [ '确定', '取消' ] //按钮
 	}, function() {
 		$.ajax({
 			type : 'delete',
 			dataType : 'json',
-			url : baselocation + '/online/advert/' + value,
+			url : baselocation + '/system/order/list/delete/' + value,
 			success : function(result) {
 				if (result.code == 1) {
 					$('#table').bootstrapTable('hideRow', {
 						index : index
 					});
-					layer.msg('该广告删除成功!', {
+					layer.msg('该订单取消成功!', {
 						icon : 1,
 						time : 1000
 					});

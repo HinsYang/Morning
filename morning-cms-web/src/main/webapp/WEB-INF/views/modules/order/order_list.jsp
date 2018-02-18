@@ -51,9 +51,7 @@
                         <th data-field="payType" data-formatter="payFormatter" data-halign="center" data-align="center" data-sortable="true">支付方式</th>
                         <th data-field="shipmentTime" data-formatter="shipmentTimeFormatter" data-halign="center" data-align="center" data-sortable="true">配送时间</th>
                         <th data-field="shipmentType" data-formatter="shipmentTypeFormatter" data-halign="center" data-align="center" data-sortable="true">配送方式</th>
-                        <th data-field="shipmentAmount" data-halign="center" data-align="center" data-sortable="true">快递费</th>
                         <th data-field="invoiceType" data-formatter="invoiceTypeFormatter" data-halign="center" data-align="center" data-sortable="true">是否发票</th>
-                        <th data-field="invoiceTitle" data-halign="center" data-align="center" data-sortable="true">发票抬头</th>
                         <th data-field="orderStatus" data-formatter="orderStatusFormatter" data-halign="center" data-align="center" data-sortable="true">订单状态</th>
                         <th data-field="createTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">生成时间</th>
                         <th data-field="updateTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">更新时间</th>

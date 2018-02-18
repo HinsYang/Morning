@@ -156,4 +156,31 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 		pageInfo.setTotal(page.getTotal());
 		return new BasePageDTO<Order>(pageInfo, orders);
 	}
+
+	@Override
+	public Integer updateCancelOrder(Long orderNumber,String adminId) {
+		Order queryOrder = new Order();
+		queryOrder.setOrderNumber(orderNumber);
+		Order order = orderMapper.selectOne(queryOrder);
+
+		if (order != null) {
+			order.setOrderStatus(OrderStatusEnum.MANUALLY_CANCEL_THE_ORDER.getStatus());
+			order.setUpdateTime(new Date());
+			orderMapper.updateById(order);
+
+			// 添加订单记录表
+			OrderStatus orderStatus = new OrderStatus();
+			orderStatus.setCreateBy(adminId);
+			orderStatus.setCreateTime(new Date());
+			orderStatus.setRemarks(OrderStatusEnum.MANUALLY_CANCEL_THE_ORDER.getStateInfo());
+			orderStatus.setOrderStatus(OrderStatusEnum.MANUALLY_CANCEL_THE_ORDER.getStatus());
+			orderStatus.setOrderId(order.getOrderId());
+			orderStatus.setCreateStatus(OrderCreateStatusEnum.MEMBER.getStatus());
+			return orderStatusMapper.insert(orderStatus);
+		} else {
+			// TODO 抛出一个订单不存在的异常
+			return null;
+		}
+
+	}
 }

@@ -246,7 +246,7 @@
     	AND user_id = #{userId}
     </select>
 
-	<select id="listByPage" resultMap="OrderVOsResultMap">
+	<select id="listByPage" resultMap="BaseResultMap">
 		SELECT
 		order_id,
 		order_number,
@@ -256,7 +256,6 @@
 		shipment_type,
 	  	shipment_amount,
 		invoice_type,
-		invoice_title,
 		order_status,
 		create_time,
 		update_time,
