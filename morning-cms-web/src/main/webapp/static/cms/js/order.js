@@ -114,7 +114,7 @@ window.actionEvents = {
 		layer_show(row.name, baselocation + '/system/order/list/' + row.orderId + '/edit', 900, 650)
 	},
 	'click .remove' : function(e, value, row, index) {
-		admin_delete(index, row.advertId);
+		admin_delete(index, row.orderId);
 	},
 	'click .log' : function(e, value, row, index) {
 		window.location.href = baselocation + '/system/order/list/' + row.orderId + '/detail/view';
@@ -200,9 +200,11 @@ function admin_delete(index, value) {
 			url : baselocation + '/system/order/list/delete/' + value,
 			success : function(result) {
 				if (result.code == 1) {
-					$('#table').bootstrapTable('hideRow', {
-						index : index
-					});
+                    $('#table').bootstrapTable('updateCell', {
+                        index : index,
+                        field : 'orderStatus',
+                        value : 12
+                    });
 					layer.msg('该订单取消成功!', {
 						icon : 1,
 						time : 1000

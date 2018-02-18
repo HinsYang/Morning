@@ -52,7 +52,7 @@ public class OrderController {
 
     @ApiOperation(value = "手动取消订单", notes = "根据url订单ID取消订单")
     @RequiresPermissions("order:list:delete")
-    @DeleteMapping(value = "/{advertId}")
+    @DeleteMapping(value = "/delete/{orderId}")
     @ResponseBody
     public Object delete(@PathVariable("orderId") Long orderId) {
         AuthorizingUser authorizingUser = SingletonLoginUtils.getUser();

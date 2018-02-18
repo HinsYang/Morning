@@ -160,7 +160,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 	@Override
 	public Integer updateCancelOrder(Long orderNumber,String adminId) {
 		Order queryOrder = new Order();
-		queryOrder.setOrderNumber(orderNumber);
+		queryOrder.setOrderId(orderNumber);
 		Order order = orderMapper.selectOne(queryOrder);
 
 		if (order != null) {
