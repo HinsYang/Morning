@@ -56,4 +56,18 @@ public class ProductController extends BaseController {
 		BasePageDTO<Product> basePageDTO = productService.listByPage(pageInfo, search);
 		return new CmsPageResult(basePageDTO.getList(), basePageDTO.getPageInfo().getTotal());
 	}
+
+	/*@ApiOperation(value = "删除产品", notes = "根据url产品ID删除产品")
+	@RequiresPermissions("product:list:delete")
+	@DeleteMapping(value = "/delete/{productId}")
+	@ResponseBody
+	public Object delete(@PathVariable("productId") Long productId) {
+		AuthorizingUser authorizingUser = SingletonLoginUtils.getUser();
+		if (authorizingUser != null) {
+			Integer count = productService.updateCancelOrder(product,authorizingUser.getUserId().toString());
+			return new CmsResult(CommonReturnCode.SUCCESS, count);
+		} else {
+			return new CmsResult(CommonReturnCode.UNAUTHORIZED);
+		}
+	}*/
 }

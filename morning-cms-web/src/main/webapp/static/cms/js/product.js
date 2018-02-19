@@ -139,22 +139,22 @@ function status_start(index, value) {
 }
 
 /**
- * 删除广告
+ * 删除产品
  */
 function admin_delete(index, value) {
-	layer.confirm('确认要删除该广告吗？', {
+	layer.confirm('确认要删除该产品吗？', {
 		btn : [ '确定', '取消' ] //按钮
 	}, function() {
 		$.ajax({
 			type : 'delete',
 			dataType : 'json',
-			url : baselocation + '/online/advert/' + value,
+			url : baselocation + '/product/list/delete/' + value,
 			success : function(result) {
 				if (result.code == 1) {
 					$('#table').bootstrapTable('hideRow', {
 						index : index
 					});
-					layer.msg('该广告删除成功!', {
+					layer.msg('该产品删除成功!', {
 						icon : 1,
 						time : 1000
 					});
