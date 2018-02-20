@@ -23,7 +23,7 @@
                 <div class="example">
                   <div id="toolbar" class="btn-group m-t-sm">
                     <shiro:hasPermission name="product:list:add">
-                      <button type="button" class="btn btn-default"  title="创建产品" onclick="layer_show('创建广告位','${ctx}/online/advert/create','800','700')"> <i class="glyphicon glyphicon-plus"></i> </button>
+                      <button type="button" class="btn btn-default"  title="创建产品" onclick="layer_show('创建产品','${ctx}/product/list/create','800','700')"> <i class="glyphicon glyphicon-plus"></i> </button>
                     </shiro:hasPermission>
                   </div>
                   <table id="table"
@@ -51,7 +51,7 @@
                         <th data-field="name" data-halign="center" data-align="center" data-sortable="true">产品名称</th>
                         <th data-field="showPrice" data-halign="center" data-align="center" data-sortable="true">显示价钱</th>
                         <th data-field="introduce" data-halign="center" data-align="center" data-sortable="true">描述</th>
-                        <th data-field="picImg" data-halign="center" data-align="center" data-sortable="true">图片路径</th>
+                        <th data-field="showInShelve" data-formatter="showInShelveFormatter" data-halign="center" data-align="center" data-sortable="true">是否上架</th>
                         <th data-field="createTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">生成时间</th>
                         <th data-field="createBy" data-halign="center" data-align="center" data-sortable="true">生成人</th>
                         <th data-field="updateTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">更新时间</th>

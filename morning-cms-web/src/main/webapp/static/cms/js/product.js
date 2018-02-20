@@ -20,10 +20,19 @@ function labelIdFormatter(value) {
 	}
 }
 
+function showInShelveFormatter(value) {
+    if (value == 1){
+        return '<span class="label label-info">已上架</span>'
+    }
+    else if (value == 0){
+        return '<span class="label label-warning">已下架</span>'
+    }
+}
+
 function actionFormatter(value, row, index) {
-	if (row.status == 1) {
+	if (row.showInShelve == 1) {
 		return [
-			'<a class="freeze m-r-sm text-info" href="javascript:void(0)" title="隐藏">',
+			'<a class="freeze m-r-sm text-info" href="javascript:void(0)" title="下架">',
 			'<i class="glyphicon glyphicon-pause"></i>',
 			'</a>',
 			'<a class="edit m-r-sm text-warning" href="javascript:void(0)" title="编辑">',
@@ -32,13 +41,13 @@ function actionFormatter(value, row, index) {
 			'<a class="remove m-r-sm text-danger" href="javascript:void(0)" title="删除">',
 			'<i class="glyphicon glyphicon-remove"></i>',
 			'</a>',
-			'<a class="log m-r-sm text-primary" href="javascript:void(0)" title="广告详情">',
+			'<a class="log m-r-sm text-primary" href="javascript:void(0)" title="产品详情">',
 			'<i class="glyphicon glyphicon-sort-by-attributes-alt"></i>',
 			'</a>',
 		].join('');
 	} else {
 		return [
-			'<a class="normal m-r-sm text-info" href="javascript:void(0)" title="显示">',
+			'<a class="normal m-r-sm text-info" href="javascript:void(0)" title="上架">',
 			'<i class="glyphicon glyphicon-play"></i>',
 			'</a>',
 			'<a class="edit m-r-sm text-warning" href="javascript:void(0)" title="编辑">',
@@ -47,7 +56,7 @@ function actionFormatter(value, row, index) {
 			'<a class="remove m-r-sm text-danger" href="javascript:void(0)" title="删除">',
 			'<i class="glyphicon glyphicon-remove"></i>',
 			'</a>',
-			'<a class="log m-r-sm text-primary" href="javascript:void(0)" title="广告详情">',
+			'<a class="log m-r-sm text-primary" href="javascript:void(0)" title="产品详情">',
 			'<i class="glyphicon glyphicon-sort-by-attributes-alt"></i>',
 			'</a>',
 		].join('');
@@ -56,16 +65,16 @@ function actionFormatter(value, row, index) {
 
 window.actionEvents = {
 	'click .freeze' : function(e, value, row, index) {
-		status_stop(index, row.advertId);
+		status_stop(index, row.productId);
 	},
 	'click .normal' : function(e, value, row, index) {
-		status_start(index, row.advertId);
+		status_start(index, row.productId);
 	},
 	'click .edit' : function(e, value, row, index) {
 		layer_show(row.name, baselocation + '/system/order/list/' + row.orderId + '/edit', 900, 650)
 	},
 	'click .remove' : function(e, value, row, index) {
-		admin_delete(index, row.advertId);
+		admin_delete(index, row.productId);
 	},
 	'click .log' : function(e, value, row, index) {
 		window.location.href = baselocation + '/system/order/list/' + row.orderId + '/detail/view';
@@ -73,25 +82,25 @@ window.actionEvents = {
 };
 
 /**
- * 隐藏广告
+ * 隐藏产品
  */
 function status_stop(index, value) {
-	layer.confirm('确认要隐藏该广告吗？', {
+	layer.confirm('确认要下架该产品吗？', {
 		btn : [ '确定', '取消' ] //按钮
 	}, function() {
 		$.ajax({
 			dataType : 'json',
 			type : 'put',
-			url : baselocation + '/online/advert/' + value + '/audit',
+			url : baselocation + '/product/list/' + value + '/audit',
 			success : function(result) {
 				if (result.code == 1) {
 					$('#table').bootstrapTable('updateRow', {
 						index : index,
 						row : {
-							status : 0,
+                            showInShelve : 0,
 						}
 					});
-					layer.msg('该广告隐藏成功!', {
+					layer.msg('该产品下架成功!', {
 						icon : 5,
 						time : 1000
 					});
@@ -106,25 +115,25 @@ function status_stop(index, value) {
 }
 
 /**
- * 显示广告
+ * 上架产品
  */
 function status_start(index, value) {
-	layer.confirm('确认要显示该广告吗？', {
+	layer.confirm('确认要上架该产品吗？', {
 		btn : [ '确定', '取消' ] //按钮
 	}, function() {
 		$.ajax({
 			dataType : 'json',
 			type : 'put',
-			url : baselocation + '/online/advert/' + value + '/audit',
+			url : baselocation + '/product/list/' + value + '/audit',
 			success : function(result) {
 				if (result.code == 1) {
 					$('#table').bootstrapTable('updateRow', {
 						index : index,
 						row : {
-							status : 1,
+                            showInShelve : 1,
 						}
 					});
-					layer.msg('该广告显示成功!', {
+					layer.msg('该产品上架成功!', {
 						icon : 6,
 						time : 1000
 					});

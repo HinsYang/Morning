@@ -12,6 +12,7 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,6 +41,27 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 		List<Product> products = productMapper.listByPage(pageInfo, search, page);
 		pageInfo.setTotal(page.getTotal());
 		return new BasePageDTO<Product>(pageInfo, products);
+	}
+
+	@Override
+	public Integer updateStatus(Long productId,String adminName) {
+		Product query=new Product();
+		query.setProductId(productId);
+		Product product=productMapper.selectOne(query);
+
+		if (product!=null){
+			int showInShelve = product.getShowInShelve();
+			if (showInShelve == 0){
+				product.setShowInShelve(1);
+			}else if (showInShelve == 1){
+				product.setShowInShelve(0);
+			}
+			product.setShelveTime(new Date());
+			product.setShelveBy(adminName);
+
+			return productMapper.updateById(product);
+		}
+		return null;
 	}
 
 

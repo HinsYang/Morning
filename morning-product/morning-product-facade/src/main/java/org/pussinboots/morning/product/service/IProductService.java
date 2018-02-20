@@ -27,4 +27,6 @@ public interface IProductService extends IService<Product> {
 	ProductVO getByNumber(Long productNumber, Integer status);
 
     BasePageDTO<Product> listByPage(PageInfo pageInfo, String search);
+
+    Integer updateStatus(Long productId, String adminName);
 }

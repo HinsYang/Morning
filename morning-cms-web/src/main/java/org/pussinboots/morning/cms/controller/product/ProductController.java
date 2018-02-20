@@ -43,7 +43,7 @@ public class ProductController extends BaseController {
 	@ApiOperation(value = "产品管理页面", notes = "产品管理页面")
 	@RequiresPermissions("product:list:view")
 	@GetMapping(value = "/view")
-	public String getAdvertPage(Model model) {
+	public String getProductPage(Model model) {
 		return "/modules/product/product_list";
 	}
 
@@ -55,6 +55,24 @@ public class ProductController extends BaseController {
 	public Object listProduct(PageInfo pageInfo, @RequestParam(required = false, value = "search") String search){
 		BasePageDTO<Product> basePageDTO = productService.listByPage(pageInfo, search);
 		return new CmsPageResult(basePageDTO.getList(), basePageDTO.getPageInfo().getTotal());
+	}
+
+	/**
+	 * PUT 启用/冻结产品
+	 * @return
+	 */
+	@ApiOperation(value = "启用/冻结产品", notes = "根据url产品ID启动/冻结产品")
+	@RequiresPermissions("product:list:audit")
+	@PutMapping(value = "/{productId}/audit")
+	@ResponseBody
+	public Object audit(@PathVariable("productId") Long productId) {
+		AuthorizingUser authorizingUser = SingletonLoginUtils.getUser();
+		if (authorizingUser != null) {
+			Integer count = productService.updateStatus(productId,authorizingUser.getUserName());
+			return new CmsResult(CommonReturnCode.SUCCESS, count);
+		} else {
+			return new CmsResult(CommonReturnCode.UNAUTHORIZED);
+		}
 	}
 
 	/*@ApiOperation(value = "删除产品", notes = "根据url产品ID删除产品")
