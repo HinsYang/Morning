@@ -1,5 +1,6 @@
 package org.pussinboots.morning.cms.controller.product;
 
+import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -10,14 +11,18 @@ import org.pussinboots.morning.cms.common.util.SingletonLoginUtils;
 import org.pussinboots.morning.common.base.BaseController;
 import org.pussinboots.morning.common.base.BasePageDTO;
 import org.pussinboots.morning.common.constant.CommonReturnCode;
+import org.pussinboots.morning.common.enums.StatusEnum;
 import org.pussinboots.morning.common.support.page.PageInfo;
-import org.pussinboots.morning.product.entity.Category;
-import org.pussinboots.morning.product.entity.Product;
-import org.pussinboots.morning.product.service.IProductService;
+import org.pussinboots.morning.product.entity.*;
+import org.pussinboots.morning.product.pojo.vo.CategoryVO;
+import org.pussinboots.morning.product.pojo.vo.ProductCategoryVO;
+import org.pussinboots.morning.product.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 
@@ -35,7 +40,16 @@ public class ProductController extends BaseController {
 	
 	@Autowired
 	private IProductService productService;
-	
+	@Autowired
+	private ILabelService labelService;
+	@Autowired
+	private ICategoryService categoryService;
+	@Autowired
+	private IProductCategoryService productCategoryService;
+	@Autowired
+	private IProductParameterService productParameterService;
+
+
 	/**
 	 * GET 分类管理页面
 	 * @return
@@ -75,17 +89,99 @@ public class ProductController extends BaseController {
 		}
 	}
 
-	/*@ApiOperation(value = "删除产品", notes = "根据url产品ID删除产品")
-	@RequiresPermissions("product:list:delete")
-	@DeleteMapping(value = "/delete/{productId}")
+	/**
+	 * GET 更新商品页面
+	 * @return
+	 */
+	@ApiOperation(value = "更新商品页面", notes = "更新商品页面")
+	@RequiresPermissions("product:list:edit")
+	@GetMapping(value = "/{productId}/edit")
+	public String getUpdatePage(Model model, @PathVariable("productId") Long productId) {
+
+		Product product = productService.getByProductId(productId);
+		model.addAttribute("product", product);
+
+		List<Label> labels =labelService.list();
+		model.addAttribute("labels",labels);
+
+		ProductCategory productCategory=productCategoryService.getByProductId(productId);
+		List<ProductCategoryVO> categories=categoryService.listTreeByStatus(StatusEnum.SHOW.getStatus());
+		for (ProductCategoryVO category:categories){
+			if (category.getCategoryId() == productCategory.getCategoryId()){
+				category.setChecked(true);
+			}
+		}
+		model.addAttribute("categories", JSON.toJSON(categories));
+
+		List<ProductParameter> productParameters=productParameterService.listByProductId(productId,StatusEnum.NORMAL.getStatus());
+		model.addAttribute("productParameters",productParameters);
+
+		return "/modules/product/product_update";
+	}
+
+	/**
+	 * PUT 更新商品
+	 * @return
+	 */
+	@ApiOperation(value = "更新商品页面", notes = "更新商品页面")
+	@RequiresPermissions("product:list:edit")
+	@PutMapping(value = "/{productId}")
 	@ResponseBody
-	public Object delete(@PathVariable("productId") Long productId) {
-		AuthorizingUser authorizingUser = SingletonLoginUtils.getUser();
-		if (authorizingUser != null) {
-			Integer count = productService.updateCancelOrder(product,authorizingUser.getUserId().toString());
-			return new CmsResult(CommonReturnCode.SUCCESS, count);
-		} else {
+	public Object update(@PathVariable("productId") Long productId, Product product,Long categoryId,String paramNames,String paramValues) {
+		AuthorizingUser authorizingUser=SingletonLoginUtils.getUser();
+		if (authorizingUser!=null){
+			Integer count=productService.updateProduct(product,authorizingUser.getUserName());
+			//更新种类
+			Integer size=productCategoryService.updateProductCategory(productId,categoryId);
+			//更新参数
+			Integer length=productParameterService.updateProductParameter(productId,paramNames,paramValues,authorizingUser.getUserName());
+			return new CmsResult(CommonReturnCode.SUCCESS,count+size+length);
+		}else {
 			return new CmsResult(CommonReturnCode.UNAUTHORIZED);
 		}
-	}*/
+	}
+
+	/**
+	 * GET 创建商品页面
+	 * @return
+	 */
+	@ApiOperation(value = "创建商品页面", notes = "创建商品页面")
+	@RequiresPermissions("product:list:add")
+	@GetMapping(value = "/create")
+	public String getCreatePage(Model model) {
+
+		Product product = new Product();
+		model.addAttribute("product", product);
+
+		List<Label> labels =labelService.list();
+		model.addAttribute("labels",labels);
+
+		List<ProductCategoryVO> categories=categoryService.listTreeByStatus(StatusEnum.SHOW.getStatus());
+		categories.get(0).setChecked(true);
+		model.addAttribute("categories", JSON.toJSON(categories));
+
+		return "/modules/product/product_create";
+	}
+
+	/**
+	 * PUT 创建商品
+	 * @return
+	 */
+	@ApiOperation(value = "创建商品页面", notes = "创建商品页面")
+	@RequiresPermissions("product:list:add")
+	@PutMapping(value = "")
+	@ResponseBody
+	public Object update(Product product,Long categoryId,String paramNames,String paramValues) {
+		AuthorizingUser authorizingUser=SingletonLoginUtils.getUser();
+		if (authorizingUser!=null){
+			Integer count=productService.insertProduct(product,authorizingUser.getUserName());
+			//更新种类
+			Integer size=productCategoryService.insertProductCategory(product.getProductId(),categoryId,authorizingUser.getUserName());
+			//更新参数
+			Integer length=productParameterService.insertProductParameter(product.getProductId(),paramNames,paramValues,authorizingUser.getUserName());
+			return new CmsResult(CommonReturnCode.SUCCESS,count+size+length);
+		}else {
+			return new CmsResult(CommonReturnCode.UNAUTHORIZED);
+		}
+	}
 }

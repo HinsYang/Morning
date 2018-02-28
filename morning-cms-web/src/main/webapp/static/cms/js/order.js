@@ -71,7 +71,7 @@ function orderStatusFormatter(value) {
 
 function actionFormatter(value, row, index) {
     return [
-        '<a class="log m-r-sm text-primary" href="javascript:void(0)" title="广告详情">',
+        '<a class="product m-r-sm text-primary" href="javascript:void(0)" title="订单商品详情">',
         '<i class="glyphicon glyphicon-sort-by-attributes-alt"></i>',
         '</a>',
         '<a class="edit m-r-sm text-warning" href="javascript:void(0)" title="编辑">',
@@ -90,8 +90,8 @@ window.actionEvents = {
 	'click .remove' : function(e, value, row, index) {
 		admin_delete(index, row.orderId);
 	},
-	'click .log' : function(e, value, row, index) {
-		window.location.href = baselocation + '/system/order/list/' + row.orderId + '/detail/view';
+	'click .product' : function(e, value, row, index) {
+		window.location.href = baselocation + '/system/order/list/' + row.orderId + '/product/view';
 	}
 };
 
@@ -160,58 +160,158 @@ $(function() {
 			validating : 'glyphicon glyphicon-refresh'
 		},
 		fields : {
-			'name' : {
-				message : '广告名称验证失败',
+			'orderNumber' : {
+				message : '订单号码验证失败',
 				validators : {
 					notEmpty : {
-						message : '广告名称不能为空'
-					}
+						message : '订单号码不能为空'
+					},
+                    regexp: {
+                        regexp: /^[0-9]*$/,
+                        message: '订单号码只能为数字'
+                    }
 				}
 			},
-			'code' : {
-				message : '广告标志验证失败',
+			'userId' : {
+				message : '用户ID验证失败',
 				validators : {
 					notEmpty : {
-						message : '广告标志不能为空'
-					}
+						message : '用户ID不能为空'
+					},
+                    regexp: {
+                        regexp: /^[0-9]*$/,
+                        message: '用户只能为数字'
+                    }
 				}
 			},	
-			'showNumber' : {
-				message : '显示数量验证失败',
+			'payType' : {
+				message : '支付方式验证失败',
 				validators : {
 					notEmpty : {
-						message : '广告栏显示数量不能为空'
+						message : '支付方式不能为空'
 					},
 		            regexp: {
 		                regexp: /^[0-9]*$/,
-		                message: '广告栏显示数量只能为数字'
+		                message: '支付方式只能为数字'
 		            }
 				}
 			},
-			'width' : {
-				message : '宽度验证失败',
+			'shipmentTime' : {
+				message : '配送时间验证失败',
 				validators : {
 					notEmpty : {
-						message : '宽度不能为空'
+						message : '配送时间不能为空'
 					},
 		            regexp: {
 		                regexp: /^[0-9]*$/,
-		                message: '宽度只能为数字'
+		                message: '配送时间只能为数字'
 		            }
 				}
 			},	
-			'height' : {
-				message : '高度验证失败',
+			'shipmentType' : {
+				message : '配送方式验证失败',
 				validators : {
 					notEmpty : {
-						message : '高度不能为空'
+						message : '配送方式不能为空'
 					},
 		            regexp: {
 		                regexp: /^[0-9]*$/,
-		                message: '高度只能为数字'
+		                message: '配送方式只能为数字'
 		            }
 				}
-			},				
+			},
+            'invoiceType' : {
+                message : '是否发票验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '是否发票不能为空'
+                    },
+                    regexp: {
+                        regexp: /^[0-9]*$/,
+                        message: '是否发票只能为数字'
+                    }
+                }
+            },
+            'orderStatus' : {
+                message : '订单状态验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '订单状态不能为空'
+                    },
+                    regexp: {
+                        regexp: /^[0-9]*$/,
+                        message: '订单状态只能为数字'
+                    }
+                }
+            },'orderAmount' : {
+                message : '订单金额验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '订单金额不能为空'
+                    },
+                    regexp: {
+                        regexp: /^[0-9]*$/,
+                        message: '订单金额只能为数字'
+                    }
+                }
+            },'userName' : {
+                message : '收货人验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '收货人不能为空'
+                    },
+                }
+            },'userPhone' : {
+            	message : '手机号码验证失败',
+            	validators : {
+                	notEmpty : {
+                    	message : '手机号码不能为空'
+                	},
+                	regexp: {
+                    	regexp: /^[0-9]*$/,
+                    	message: '手机号码只能为数字'
+                	}
+            	}
+        	},'provinceName' : {
+                message : '省验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '省不能为空'
+                    },
+                }
+            },'cityName' : {
+                message : '市验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '市不能为空'
+                    },
+                }
+            },'districtName' : {
+                message : '区验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '区不能为空'
+                    },
+                }
+            },'userAdress' : {
+                message : '详细地址验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '详细地址不能为空'
+                    },
+                }
+            },'userZipcode' : {
+                message : '邮编验证失败',
+                validators : {
+                    notEmpty : {
+                        message : '邮编不能为空'
+                    },
+                    regexp: {
+                        regexp: /^[0-9]*$/,
+                        message: '邮编只能为数字'
+                    }
+                }
+            },
 		}
 	})
 		.on('success.form.bv', function(e) {
@@ -234,29 +334,7 @@ $(function() {
 					url : $form.attr('action'),
 					success : function(result) {
 						if (result.code == 1) {
-							parent.layer.msg("更新广告成功!", {
-								shade : 0.3,
-								time : 1500
-							}, function() {
-								window.parent.location.reload(); // 刷新父页面
-							});
-						} else {
-							layer.msg(result.message, {
-								icon : 2,
-								time : 1000
-							});
-						}
-					}
-				})
-			} else if (method == 'post') {
-				$.ajax({
-					data : $form.serialize(),
-					dataType : 'json',
-					type : 'post',
-					url : $form.attr('action'),
-					success : function(result) {
-						if (result.code == 1) {
-							parent.layer.msg("创建广告成功!", {
+							parent.layer.msg("更新订单成功!", {
 								shade : 0.3,
 								time : 1500
 							}, function() {

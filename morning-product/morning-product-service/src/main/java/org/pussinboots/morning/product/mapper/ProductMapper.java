@@ -30,4 +30,10 @@ public interface ProductMapper extends BaseMapper<Product> {
 	ProductVO getByNumber(@Param("productNumber") Long productNumber, @Param("status") Integer status);
 
     List<Product> listByPage(PageInfo pageInfo, String search, Page<Product> page);
+
+    Long getIdByNumber(@Param("productNumber") Long productNumber);
+
+    Product getByProductId(Long productId);
+
+    Integer insertProduct(Product product);
 }

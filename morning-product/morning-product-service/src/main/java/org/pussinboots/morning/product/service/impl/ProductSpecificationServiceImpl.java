@@ -9,6 +9,7 @@ import org.pussinboots.morning.common.enums.StatusEnum;
 import org.pussinboots.morning.common.util.ArrayUtils;
 import org.pussinboots.morning.product.entity.ProductSpecification;
 import org.pussinboots.morning.product.mapper.KindMapper;
+import org.pussinboots.morning.product.mapper.ProductMapper;
 import org.pussinboots.morning.product.mapper.ProductSpecificationMapper;
 import org.pussinboots.morning.product.pojo.dto.ProductSpecificationDTO;
 import org.pussinboots.morning.product.pojo.vo.KindVO;
@@ -36,14 +37,16 @@ public class ProductSpecificationServiceImpl extends ServiceImpl<ProductSpecific
 	private KindMapper kindMapper;
 	@Autowired
 	private ProductSpecificationMapper productSpecificationMapper;
+	@Autowired
+	private ProductMapper productMapper;
 	
 	@Override
 	public ProductSpecificationDTO getByProductId(Long productId, Integer status) {
 		// 根据产品ID和类型状态查找类型列表
 		List<KindVO> kindVOs = kindMapper.listByProductId(productId, status);
-		
-		System.out.println("................................");
+
 		if(kindVOs == null){
+			System.out.println("................................");
 			System.out.println("kindVOs没有被实例化");
 		}
 		
@@ -81,7 +84,15 @@ public class ProductSpecificationServiceImpl extends ServiceImpl<ProductSpecific
 		}
 		return new ProductSpecificationDTO(kindVOs, resultMap);
 	}
-	
+
+	@Override
+	public ProductSpecificationDTO getByProductNumber(Long productNumber) {
+		//获取产品ID
+		Long productId=productMapper.getIdByNumber(productNumber);
+
+		return getByProductId(productId,StatusEnum.SHOW.getStatus());
+	}
+
 	/**
 	 * 对商品类型列表进行交叉遍历,将类型转化成{{1,3},{1,4},{1,5}}格式
 	 * @param kindVOs 商品类型列表

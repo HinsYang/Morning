@@ -3,6 +3,8 @@ package org.pussinboots.morning.product.service;
 import org.pussinboots.morning.product.entity.Label;
 import com.baomidou.mybatisplus.service.IService;
 
+import java.util.List;
+
 /**
  * 
 * 项目名称：morning-product-facade   
@@ -13,5 +15,6 @@ import com.baomidou.mybatisplus.service.IService;
 *
  */
 public interface ILabelService extends IService<Label> {
-	
+
+    List<Label> list();
 }

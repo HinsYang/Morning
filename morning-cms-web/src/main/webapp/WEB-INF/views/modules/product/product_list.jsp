@@ -45,17 +45,17 @@
                          data-toolbar="#toolbar">
                     <thead>
                       <tr>
-                        <th data-field="productId" data-halign="center" data-align="center" data-sortable="true">产品id</th>
-                        <th data-field="productNumber" data-halign="center" data-align="center" data-sortable="true">产品号码</th>
+                        <th data-field="productId" data-halign="center" data-align="center" data-sortable="true">商品id</th>
+                        <th data-field="productNumber" data-halign="center" data-align="center" data-sortable="true">商品号码</th>
                         <th data-field="labelId" data-formatter="labelIdFormatter" data-halign="center" data-align="center" data-sortable="true">标签</th>
-                        <th data-field="name" data-halign="center" data-align="center" data-sortable="true">产品名称</th>
-                        <th data-field="showPrice" data-halign="center" data-align="center" data-sortable="true">显示价钱</th>
+                        <th data-field="name" data-halign="center" data-align="center" data-sortable="true">商品名称</th>
+                        <th data-field="picImg" data-formatter="picImgFormatter" data-halign="center" data-align="center" data-sortable="true">商品图片</th>
+                        <th data-field="showScore" data-halign="center" data-align="center" data-sortable="true">积分</th>
+                        <th data-field="showPrice" data-halign="center" data-align="center" data-sortable="true">单价</th>
                         <th data-field="introduce" data-halign="center" data-align="center" data-sortable="true">描述</th>
                         <th data-field="showInShelve" data-formatter="showInShelveFormatter" data-halign="center" data-align="center" data-sortable="true">是否上架</th>
                         <th data-field="createTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">生成时间</th>
-                        <th data-field="createBy" data-halign="center" data-align="center" data-sortable="true">生成人</th>
                         <th data-field="updateTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">更新时间</th>
-                        <th data-field="updateBy" data-halign="center" data-align="center" data-sortable="true">更新人</th>
                         <th data-formatter="actionFormatter" data-events="actionEvents" data-halign="center" data-align="center" data-sortable="true">操作</th>
                       </tr>
                     </thead>

@@ -3,6 +3,7 @@ package org.pussinboots.morning.product.service.impl;
 import com.baomidou.mybatisplus.plugins.Page;
 import org.pussinboots.morning.common.base.BasePageDTO;
 import org.pussinboots.morning.common.support.page.PageInfo;
+import org.pussinboots.morning.product.common.util.ProductUtils;
 import org.pussinboots.morning.product.entity.Product;
 import org.pussinboots.morning.product.mapper.ProductMapper;
 import org.pussinboots.morning.product.pojo.vo.ProductVO;
@@ -62,6 +63,31 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 			return productMapper.updateById(product);
 		}
 		return null;
+	}
+
+    @Override
+    public Integer deleteProduct(Long productId) {
+        return productMapper.deleteById(productId);
+    }
+
+	@Override
+	public Product getByProductId(Long productId) {
+		return productMapper.getByProductId(productId);
+	}
+
+	@Override
+	public Integer updateProduct(Product product, String userName) {
+		product.setUpdateTime(new Date());
+		product.setUpdateBy(userName);
+		return productMapper.updateById(product);
+	}
+
+	@Override
+	public Integer insertProduct(Product product, String userName) {
+		product.setProductNumber(ProductUtils.getProductNuber());
+		product.setCreateBy(userName);
+		product.setCreateTime(new Date());
+		return productMapper.insertProduct(product);
 	}
 
 

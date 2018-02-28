@@ -2,6 +2,8 @@ package org.pussinboots.morning.order.service;
 
 import java.util.List;
 
+import org.pussinboots.morning.common.base.BasePageDTO;
+import org.pussinboots.morning.common.support.page.PageInfo;
 import org.pussinboots.morning.order.entity.OrderProduct;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -22,5 +24,10 @@ public interface IOrderProductService extends IService<OrderProduct> {
 	 * @return
 	 */
 	List<OrderProduct> listByOrderId(Long orderId);
-	
+
+	BasePageDTO<OrderProduct> listByPage(Long orderId, PageInfo pageInfo, String search);
+
+    Integer deleteByOrderProductId(Long orderProductId);
+
+    Integer updateOrderProduct(OrderProduct orderProduct);
 }

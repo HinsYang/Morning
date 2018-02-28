@@ -23,5 +23,8 @@ public interface IProductParameterService extends IService<ProductParameter> {
 	 * @return List<ProductParameter>
 	 */
 	List<ProductParameter> listByProductId(Long productId, Integer status);
-	
+
+    Integer updateProductParameter(Long productId, String paramNames, String paramValues, String userName);
+
+    Integer insertProductParameter(Long productId, String paramNames, String paramValues, String userName);
 }

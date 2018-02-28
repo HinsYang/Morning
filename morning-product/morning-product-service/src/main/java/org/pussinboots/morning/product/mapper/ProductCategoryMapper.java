@@ -97,4 +97,8 @@ public interface ProductCategoryMapper extends BaseMapper<ProductCategory> {
 	 */
 	List<ProductVO> listBySearch(@Param("search") String search, @Param("status") Integer status,
 			@Param("pageInfo") PageInfo pageInfo, RowBounds rowBounds);
+
+    ProductCategory getByProductId(Long productId);
+
+    Integer insertProductCategory(ProductCategory productCategory);
 }

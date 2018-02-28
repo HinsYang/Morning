@@ -2,6 +2,9 @@ package org.pussinboots.morning.order.service.impl;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.plugins.Page;
+import org.pussinboots.morning.common.base.BasePageDTO;
+import org.pussinboots.morning.common.support.page.PageInfo;
 import org.pussinboots.morning.order.entity.OrderProduct;
 import org.pussinboots.morning.order.mapper.OrderProductMapper;
 import org.pussinboots.morning.order.service.IOrderProductService;
@@ -32,5 +35,23 @@ public class OrderProductServiceImpl extends ServiceImpl<OrderProductMapper, Ord
 		OrderProduct orderProduct = new OrderProduct();
 		orderProduct.setOrderId(orderId);
 		return orderProductMapper.selectList(new EntityWrapper<OrderProduct>(orderProduct));
+	}
+
+	@Override
+	public BasePageDTO<OrderProduct> listByPage(Long orderId, PageInfo pageInfo, String search) {
+		Page<OrderProduct> page = new Page<>(pageInfo.getCurrent(), pageInfo.getLimit());
+		List<OrderProduct> orderProducts = orderProductMapper.listByPage(orderId, pageInfo, search, page);
+		pageInfo.setTotal(page.getTotal());
+		return new BasePageDTO<OrderProduct>(pageInfo, orderProducts);
+	}
+
+	@Override
+	public Integer deleteByOrderProductId(Long orderProductId) {
+		return orderProductMapper.deleteById(orderProductId);
+	}
+
+	@Override
+	public Integer updateOrderProduct(OrderProduct orderProduct) {
+		return orderProductMapper.updateById(orderProduct);
 	}
 }

@@ -2,7 +2,10 @@ package org.pussinboots.morning.order.mapper;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
+import org.pussinboots.morning.common.support.page.PageInfo;
 import org.pussinboots.morning.order.entity.OrderProduct;
 import org.pussinboots.morning.order.pojo.vo.OrderShoppingCartVO;
 
@@ -28,4 +31,8 @@ public interface OrderProductMapper extends BaseMapper<OrderProduct> {
 	Integer insertProducts(@Param("shoppingCartVOs") List<OrderShoppingCartVO> shoppingCartVOs,
 			@Param("orderId") Long orderId);
 
+    List<OrderProduct> listByPage(@Param("orderId") Long orderId, @Param("pageInfo") PageInfo pageInfo,
+								  @Param("search") String search, RowBounds rowBounds);
+
+	List<OrderProduct> listByOrderId(@Param("orderId") Long orderId);
 }

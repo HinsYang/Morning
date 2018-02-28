@@ -4,7 +4,10 @@ import org.pussinboots.morning.product.entity.Label;
 import org.pussinboots.morning.product.mapper.LabelMapper;
 import org.pussinboots.morning.product.service.ILabelService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * 
@@ -17,5 +20,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class LabelServiceImpl extends ServiceImpl<LabelMapper, Label> implements ILabelService {
-	
+
+    @Autowired
+    private LabelMapper labelMapper;
+
+    @Override
+    public List<Label> list() {
+        return labelMapper.list();
+    }
 }

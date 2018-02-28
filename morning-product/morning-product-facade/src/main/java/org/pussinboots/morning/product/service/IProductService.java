@@ -29,4 +29,12 @@ public interface IProductService extends IService<Product> {
     BasePageDTO<Product> listByPage(PageInfo pageInfo, String search);
 
     Integer updateStatus(Long productId, String adminName);
+
+    Integer deleteProduct(Long productId);
+
+    Product getByProductId(Long productId);
+
+    Integer updateProduct(Product product, String userName);
+
+    Integer insertProduct(Product product, String userName);
 }

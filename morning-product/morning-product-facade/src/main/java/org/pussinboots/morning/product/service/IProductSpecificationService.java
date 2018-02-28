@@ -23,5 +23,6 @@ public interface IProductSpecificationService extends IService<ProductSpecificat
 	 * @return
 	 */
 	ProductSpecificationDTO getByProductId(Long productId, Integer status);
-	
+
+    ProductSpecificationDTO getByProductNumber(Long productNumber);
 }

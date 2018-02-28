@@ -3,6 +3,8 @@ package org.pussinboots.morning.product.mapper;
 import org.pussinboots.morning.product.entity.Label;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * 
 * 项目名称：morning-product-service   
@@ -14,4 +16,5 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 public interface LabelMapper extends BaseMapper<Label> {
 
+    List<Label> list();
 }

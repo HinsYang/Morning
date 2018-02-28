@@ -53,9 +53,10 @@
                         <th data-field="shipmentType" data-formatter="shipmentTypeFormatter" data-halign="center" data-align="center" data-sortable="true">配送方式</th>
                         <th data-field="invoiceType" data-formatter="invoiceTypeFormatter" data-halign="center" data-align="center" data-sortable="true">是否发票</th>
                         <th data-field="orderStatus" data-formatter="orderStatusFormatter" data-halign="center" data-align="center" data-sortable="true">订单状态</th>
+                        <th data-field="buyNumber"  data-halign="center" data-align="center" data-sortable="true">商品数量</th>
+                        <th data-field="payAmount"  data-halign="center" data-align="center" data-sortable="true">总金额</th>
                         <th data-field="createTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">生成时间</th>
                         <th data-field="updateTime" data-formatter="timeFormatter" data-halign="center" data-align="center" data-sortable="true">更新时间</th>
-                        <th data-field="orderAmount"  data-halign="center" data-align="center" data-sortable="true">订单金额</th>
                         <th data-formatter="actionFormatter" data-events="actionEvents" data-halign="center" data-align="center" data-sortable="true">操作</th>
                       </tr>
                     </thead>

@@ -1,5 +1,6 @@
 package org.pussinboots.morning.order.service.impl;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.pussinboots.morning.order.common.enums.OrderCreateStatusEnum;
 import org.pussinboots.morning.order.common.enums.OrderStatusEnum;
 import org.pussinboots.morning.order.common.util.OrderUtils;
 import org.pussinboots.morning.order.entity.Order;
+import org.pussinboots.morning.order.entity.OrderProduct;
 import org.pussinboots.morning.order.entity.OrderShipment;
 import org.pussinboots.morning.order.entity.OrderStatus;
 import org.pussinboots.morning.order.mapper.OrderMapper;
@@ -182,5 +184,51 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 			return null;
 		}
 
+	}
+
+	@Override
+	public OrderVO getOrderById(Long orderId) {
+		return orderMapper.getOrderById(orderId);
+	}
+
+	@Override
+	public Integer updateOrder(Order order, OrderShipment orderShipment, String userName) {
+		Order old=orderMapper.selectById(order.getOrderId());
+		//如果订单状态改变则新增状态记录
+		if (!old.getOrderStatus().equals(order.getOrderStatus())){
+			OrderStatus orderStatus=new OrderStatus();
+			orderStatus.setOrderId(order.getOrderId());
+			orderStatus.setOrderStatus(order.getOrderStatus());
+			orderStatus.setCreateStatus(1);
+			orderStatus.setCreateBy(userName);
+			orderStatus.setCreateTime(new Date());
+			orderStatusMapper.insert(orderStatus);
+		}
+		order.setUpdateTime(new Date());
+
+		orderShipment.setUpdateTime(new Date());
+		return orderMapper.updateById(order) + orderShipmentMapper.updateById(orderShipment);
+	}
+
+	@Override
+	public Integer updateOrderAmountScoreNumber(Long orderId) {
+		Order order=orderMapper.selectById(orderId);
+		List<OrderProduct> orderProducts=orderProductMapper.listByOrderId(orderId);
+
+		BigDecimal orderAmount = new BigDecimal(0);
+		Integer orderScore = new Integer(0);
+		Integer buyNumber = new Integer(0);
+		for (OrderProduct orderProduct:orderProducts){
+			orderAmount = orderAmount.add(orderProduct.getProductAmount());
+			orderScore += orderProduct.getProductScore();
+			buyNumber += orderProduct.getBuyNumber();
+		}
+
+		order.setOrderAmount(orderAmount);
+		order.setOrderScore(orderScore);
+		order.setBuyNumber(buyNumber);
+		order.setPayAmount(OrderUtils.getPayAmount(order.getShipmentAmount(),orderAmount));
+
+		return orderMapper.updateById(order);
 	}
 }

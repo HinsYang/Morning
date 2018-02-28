@@ -8,6 +8,7 @@ import org.pussinboots.morning.product.entity.Category;
 import org.pussinboots.morning.product.pojo.vo.CategoryVO;
 
 import com.baomidou.mybatisplus.service.IService;
+import org.pussinboots.morning.product.pojo.vo.ProductCategoryVO;
 
 /**
  * 
@@ -109,4 +110,7 @@ public interface ICategoryService extends IService<Category> {
 	 */
 	Integer updateCategory(Category category, String userName);
 
+    List<Category> listByStatus(Integer status);
+
+    List<ProductCategoryVO> listTreeByStatus(Integer status);
 }

@@ -16,6 +16,7 @@ import org.pussinboots.morning.product.entity.ProductCategory;
 import org.pussinboots.morning.product.mapper.CategoryMapper;
 import org.pussinboots.morning.product.mapper.ProductCategoryMapper;
 import org.pussinboots.morning.product.pojo.vo.CategoryVO;
+import org.pussinboots.morning.product.pojo.vo.ProductCategoryVO;
 import org.pussinboots.morning.product.pojo.vo.ProductVO;
 import org.pussinboots.morning.product.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -304,6 +305,16 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 		category.setUpdateBy(userName);
 		category.setUpdateTime(new Date());
 		return categoryMapper.updateById(category);
+	}
+
+	@Override
+	public List<Category> listByStatus(Integer status) {
+		return categoryMapper.listByStatus(status);
+	}
+
+	@Override
+	public List<ProductCategoryVO> listTreeByStatus(Integer status) {
+		return categoryMapper.listTreeByStatus(status);
 	}
 
 }

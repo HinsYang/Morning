@@ -50,5 +50,7 @@ public interface OrderMapper extends BaseMapper<Order> {
 	 */
 	OrderVO getOrder(@Param("userId") Long userId, @Param("orderNumber") Long orderNumber);
 
+	OrderVO getOrderById(@Param("orderId") Long orderId);
+
 	List<Order> listByPage(@Param("pageInfo") PageInfo pageInfo, @Param("search") String search, RowBounds page);
 }

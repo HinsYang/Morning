@@ -85,4 +85,10 @@ public interface IOrderService extends IService<Order> {
     BasePageDTO<Order> listByPage(PageInfo pageInfo, String search);
 
     Integer updateCancelOrder(Long orderId, String adminId);
+
+	OrderVO getOrderById(Long orderId);
+
+    Integer updateOrder(Order order, OrderShipment orderShipment, String userName);
+
+    Integer updateOrderAmountScoreNumber(Long orderId);
 }

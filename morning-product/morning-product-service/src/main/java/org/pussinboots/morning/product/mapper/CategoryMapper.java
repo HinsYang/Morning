@@ -7,9 +7,11 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 import org.pussinboots.morning.common.support.page.PageInfo;
 import org.pussinboots.morning.product.entity.Category;
+import org.pussinboots.morning.product.entity.ProductCategory;
 import org.pussinboots.morning.product.pojo.vo.CategoryVO;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import org.pussinboots.morning.product.pojo.vo.ProductCategoryVO;
 
 /**
  * 
@@ -102,4 +104,8 @@ public interface CategoryMapper extends BaseMapper<Category> {
 	 */
 	List<Category> listParentByPage(@Param("parentId") Long parentId, @Param("pageInfo") PageInfo pageInfo,
 			@Param("search") String search, RowBounds rowBounds);
+
+    List<Category> listByStatus(Integer status);
+
+    List<ProductCategoryVO> listTreeByStatus(Integer status);
 }
