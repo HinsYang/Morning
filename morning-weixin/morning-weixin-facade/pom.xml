@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.pussinboots.morning</groupId>
+        <artifactId>morning-weixin</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.pussinboots.morning</groupId>
+    <artifactId>morning-weixin-facade</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- 0.Morning相关依赖 begin -->
+        <dependency>
+            <groupId>org.pussinboots.morning</groupId>
+            <artifactId>morning-common</artifactId>
+            <version>${morning.version}</version>
+        </dependency>
+        <!-- Morning相关依赖 end -->
+
+        <!-- 4.MYBATIS 持久层框架 begin -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>	  <!-- mybatis-plus Mybatis增强辅助工具 -->
+        </dependency>
+        <!-- MYBATIS 持久层框架 end -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- RESTful风格的Web服务框架SWAGGER2:swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId> <!--jackson json:高性能的JSON处理 -->
+        </dependency>
+    </dependencies>
+</project>
