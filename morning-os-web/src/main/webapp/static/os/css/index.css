@@ -109,11 +109,10 @@
 }
 
 .xm-plain-box .box-hd .title {
-	padding-left: 15px;
 	margin: 0;
-	font-size: 20px;
+	font-size: 22px;
 	font-weight: 200;
-	line-height: 42px;
+	line-height: 58px;
 	color: #333
 }
 
@@ -236,9 +235,9 @@
 	position: relative;
 	z-index: 1;
 	float: left;
-	width: 22%;
-	margin-left: 6px;
-	margin-bottom: 6px;
+	width: 234px;
+	margin-left: 14px;
+	margin-bottom: 14px;
 	background: #fff;
 	-webkit-transition: all .2s linear;
 	transition: all .2s linear;
@@ -1024,14 +1023,14 @@
 
 .home-hero-slider {
 	position: relative;
-	height: 180px;
+	height: 460px;
 	overflow: hidden;
 	_zoom: 1
 }
 
 .home-hero-slider .box {
 	width: 100%;
-	height: 180px;
+	height: 460px;
 	position: relative;
 	overflow: hidden;
 }
@@ -1050,11 +1049,11 @@
 
 .home-hero-slider .oll {
 	position: absolute;
-	bottom: 10px;
+	bottom: 20px;
 	left: 0;
 	width: 100%;
 	text-align: right;
-	padding: 0 10px;
+	padding: 0 30px;
 }
 
 .home-hero-slider .oll li {
@@ -1085,7 +1084,7 @@
 }
 
 .home-hero-slider .box .left {
-	left: 0;
+	left: 234px;
 }
 
 .home-hero-slider .box .right {
@@ -1375,7 +1374,7 @@
 }
 
 .home-main {
-	padding: 10px 0;
+	padding-top: 60px
 }
 
 .home-brick-box {
@@ -1424,8 +1423,7 @@
 }
 
 .home-recm-box .box-hd .more {
-	top: -10px;
-	padding-right: 15px;
+	top: -10px
 }
 
 .home-recm-box .xm-carousel-wrapper {

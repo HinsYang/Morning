@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemesh>
     <!-- 排除，不进行装饰的路径 -->
-    <!--<mapping path="/pass/**" exclue="true"/>-->
+    <mapping path="/pass/**" exclue="true"/>
     <mapping path="/druid/*" exclue="true"/>
     <mapping path="/recommend/**" exclue="true"/>
     <mapping path="/question/askList" exclue="true"/>
@@ -18,11 +18,11 @@
       <path>/</path>
       <decorator>/WEB-INF/layouts/web/default.jsp</decorator>
     </mapping>
-
+    
    	<!-- 个人中心布局 -->
     <mapping>
-        <path>/uc/*</path>
-        <decorator>/WEB-INF/layouts/web/default_uc.jsp</decorator>
+      <path>/uc/*</path>
+      <decorator>/WEB-INF/layouts/web/default_uc.jsp</decorator>
     </mapping>
     
     <!-- 自定义 tag 规则 -->

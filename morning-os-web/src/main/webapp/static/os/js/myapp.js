@@ -9,7 +9,7 @@ $(function() {
 	$("#J_userInfo .user").hover(function() {
 		$(this).addClass('user-active');
 		$(this).children(".user-menu").css('display', 'block').animate({
-			height : "130px"
+			height : "165px"
 		}, 165);
 	}, function() {
 		$(this).removeClass('user-active');

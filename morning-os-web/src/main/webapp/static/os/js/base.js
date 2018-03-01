@@ -1,5 +1,5 @@
 $(function() {
-	//showsectime(); //网站计时器
+	showsectime(); //网站计时器
 	show_cart_umber(); // 购物车商品数量
 })
 
@@ -8,7 +8,7 @@ $(function() {
  * @param {} str
  * @return {}
  */
-/*function NewDate(str) {
+function NewDate(str) {
 	str = str.split('-');
 	var date = new Date();
 	date.setUTCFullYear(str[0], str[1] - 1, str[2]);
@@ -34,7 +34,7 @@ function showsectime() {
 	var seconds = Math.floor((minsold - e_minsold) * -60).toString();
 	document.getElementById("showsectime").innerHTML = "网站运行：" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
 	setTimeout(showsectime, 1000);
-}*/
+}
 
 /**
  * 搜索栏
@@ -83,7 +83,7 @@ $(function() {
 /**
  * 轮播top菜单导航
  */
-/*$(function() {
+$(function() {
 	$('.site-category .category-item').mouseover(function() {
 		$(this).addClass('category-item-active').siblings().removeClass('category-item-active');
 		var index = $(this).index();
@@ -95,7 +95,7 @@ $(function() {
 		var i = $(this).index();
 		$('.children').eq(i).css('display', 'none');
 	})
-});*/
+});
 
 /**
  * input 聚焦事件
@@ -113,9 +113,9 @@ $(function() {
 /**
  * 页面打开时间耗时计时器
  */
-/*window.onload = function() {
+window.onload = function() {
 	document.getElementById("TimeShow").innerHTML = "本次耗时：" + (new Date().getTime() - t1) / 1000 + " 秒";
-}*/
+}
 
 /**
  * 展示用户登陆下拉菜单
@@ -124,7 +124,7 @@ $(function() {
 	$("#J_userInfo .user").hover(function() {
 		$(this).addClass('user-active');
 		$(this).children(".user-menu").css('display', 'block').animate({
-			height : "130px"
+			height : "165px"
 		}, 165);
 	}, function() {
 		$(this).removeClass('user-active');

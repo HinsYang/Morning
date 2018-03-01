@@ -25,6 +25,7 @@
 		<module>morning-cms-web</module>
 		<module>morning-os-web</module>
 		<module>morning-support</module>
+		<module>morning-os-weixin</module>
 	</modules>
 
 	<!-- 项目属性 -->

@@ -149,8 +149,6 @@
 							icon : 1,
 							time : 1000
 						});
-                        question_help();
-                        question_new();
 					} else if (result.code == 401) {
 						window.location.href = baselocation + '/pass/login';
 					} else {

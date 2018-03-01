@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>账户登陆 | 叮咚商城</title>
+<title>账户注册 | 叮咚商城</title>
 <meta name="author" content="叮咚Morning. - 但行好事，莫问前程。" />
 <meta name="keywords" content="叮咚商城,叮咚Morning,叮咚公益商城,公益,电子商城,叮咚社区,公益商城,在线购物,社会责任">
 <meta name="description" content="叮咚Morning公益商城是中国公益性在线电子商城，以商城B2C模式运营的公益在线商城，是一家致力于将传统公益商城互联网化的创新公益商城。">
@@ -18,10 +18,10 @@
 <div class="login-box">
   <div class="container-nav"> <a class="navbar-brand">但行好事,莫问前程.</a>
     <ul class="navbar-nav-right">
-      <%--<c:forEach items="${loginTop}" var="loginTop">
+      <c:forEach items="${loginTop}" var="loginTop">
         <li><a href="${loginTop.href}" target="${loginTop.target }">${loginTop.name }</a></li>
       </c:forEach>
-      <li class="link-line">|</li>--%>
+      <li class="link-line">|</li>
       <li><a href="${ctx}/pass/login">登录</a></li>
       <li><a href="${ctx}/pass/register">注册</a></li>
     </ul>
@@ -66,6 +66,9 @@
     </div>
   </div>
 </div>
+<footer class="footer clear">
+  <div class="footer_copyright"> © 2016<a href="https://git.oschina.net/Morning_/Morning" target="_blank"> yeungchihang </a>/ <span id="showsectime"></span> / <span id="TimeShow"></span> </div>
+</footer>
 <script src="${ctxsta}/common/jquery/jquery-2.1.4.min.js"></script> 
 <script src="${ctxsta}/common/bootstrap/js/bootstrap.min.js"></script> 
 <script src="${ctxsta}/common/security/security.js"></script> 

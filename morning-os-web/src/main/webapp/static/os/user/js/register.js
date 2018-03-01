@@ -784,7 +784,7 @@ $(function() {
 							$("#times").text(c);
 						},
 						after : function() {
-							window.location.href = baselocation + '/pass/login';
+							window.location.href = baselocation + '/login';
 						}
 					});
 					$(".message").hide();

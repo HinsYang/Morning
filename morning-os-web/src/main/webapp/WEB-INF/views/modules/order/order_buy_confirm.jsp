@@ -74,13 +74,23 @@
           <div class="payment-body">
             <ul class="clearfix payment-list J_paymentList J_linksign-customize">
               <li id="J_weixin"><img src="//c1.mifile.cn/f/i/15/pay/wechat0715.jpg" alt="微信支付" style="margin-left: 0;"/></li>
+              <li class="J_bank">
+                <input type="radio" name="payOnlineBank" id="alipay" value="alipay" />
+                <img src="//c1.mifile.cn/f/i/15/pay/alipay-0718-1.png" alt="支付宝" style="margin-left: 0;"/></li>
+              <li class="J_bank">
+                <input type="radio" name="payOnlineBank" id="unionpay" value="unionpay" />
+                <img src="//s01.mifile.cn/i/banklogo/unionpay.png?ver2015" alt="银联" style="margin-left: 0;"/></li>
+              <li class="J_bank">
+                <input type="radio" name="payOnlineBank" id="cft" value="cft" />
+                <img src="//s01.mifile.cn/i/banklogo/cft.png" alt="财付通" style="margin-left: 0;"/></li>
             </ul>
             <div class="event-desc">
               <p>微信支付：关注小米手机微信公众号，支付成功后可领取3-10元电影票红包。</p>
+              <p>支 付 宝：支付宝扫码支付满38元，参与赢取1999元红包</p>
               <a href="" class="more" target="_blank">了解更多&gt;</a> </div>
           </div>
         </div>
-        <%--<div class="payment-box ">
+        <div class="payment-box ">
           <div class="payment-header clearfix">
             <h3 class="title">银行借记卡及信用卡</h3>
           </div>
@@ -145,7 +155,7 @@
                 <img src="//s01.mifile.cn/i/banklogo/payOnline_fcyh.png?ver2015" alt=""/></li>
             </ul>
           </div>
-        </div>--%>
+        </div>
         <div class="payment-box payment-box-last ">
           <div class="payment-header clearfix">
             <h3 class="title">快捷支付</h3>

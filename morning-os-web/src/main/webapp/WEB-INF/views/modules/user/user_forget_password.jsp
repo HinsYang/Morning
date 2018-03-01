@@ -18,9 +18,9 @@
 <div class="login-box">
   <div class="container-nav"> <a class="navbar-brand">但行好事,莫问前程.</a>
     <ul class="navbar-nav-right">
-    <%--<c:forEach items="${loginTop}" var="loginTop">
+    <c:forEach items="${loginTop}" var="loginTop">
        <li><a href="${loginTop.href}" target="${loginTop.target}">${loginTop.name }</a></li>   
-    </c:forEach>--%>
+    </c:forEach>
       <li class="link-line">|</li>
       <li><a href="${ctx}/pass/login">登录</a></li>
       <li><a href="${ctx}/pass/register">注册</a></li>
@@ -43,7 +43,6 @@
       </div>
       <div class="reg-box retrieve-psw" id="verifyCheck" style="margin-top:20px;">
         <div class="part1">
-          <div class="item col-xs-12"></div>
           <div class="item col-xs-12"> <span class="intelligent-label f-fl"><b class="ftx04">*</b>电子邮箱：</span>
             <div class="f-fl item-ifo">
               <input type="text" name="email" class="txt03 f-r3 required btn_Pswpart1" keycodes="mail" tabindex="2" data-valid="isNonEmpty||isEmail" data-error="email不能为空||邮箱格式不正确"  id="mail" />
@@ -53,7 +52,6 @@
               <label class="focus valid"></label>
             </div>
           </div>
-          <div class="item col-xs-12"></div>
           <div class="item col-xs-12"> <span class="intelligent-label f-fl"><b class="ftx04">*</b>验证码：</span>
             <div class="f-fl item-ifo">
               <input type="text" name="registerCode" maxlength="4" class="txt03 f-r3 f-fl required btn_Pswpart1" tabindex="4" style="width:167px" id="randCode" data-valid="isNonEmpty" data-error="验证码不能为空" />
@@ -72,7 +70,7 @@
           </div>
         </div>
         <div class="part2" style="display:none">
-          <div class="alert alert-info">点击"发送验证码"，发送邮件至您电子邮箱，输入邮箱中的验证码，确保您的电子邮箱真实有效。</div>
+          <div class="alert alert-info" style="width:700px">点击"发送验证码"，发送邮件至您电子邮箱，输入邮箱中的验证码，确保您的电子邮箱真实有效。</div>
           <div class="item col-xs-12 f-mb30 f-mt10" style="height:auto"> <span class="intelligent-label f-fl">电子邮箱：</span>
             <div class="f-fl item-ifo c-blue"> </div>
           </div>
@@ -131,6 +129,9 @@
     </div>
   </div>
 </div>
+<footer class="footer clear">
+  <div class="footer_copyright"> © 2016<a href="https://git.oschina.net/Morning_/Morning" target="_blank"> yeungchihang </a>/ <span id="showsectime"></span> / <span id="TimeShow"></span> </div>
+</footer>
 <script src="${ctxsta}/common/jquery/jquery-2.1.4.min.js"></script> 
 <script src="${ctxsta}/common/bootstrap/js/bootstrap.min.js"></script> 
 <script src="${ctxsta}/os/user/js/register.js"></script> 

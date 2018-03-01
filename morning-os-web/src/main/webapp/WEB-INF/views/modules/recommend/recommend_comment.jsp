@@ -11,7 +11,7 @@
       <div class="box-bd J_brickBd">
         <ul class="review-list clearfix">
           <c:forEach items="${products}" var="product">
-            <li class="review-item" data-gid="${product.productNumber}">
+            <li class="review-item review-item-first" data-gid="${product.productNumber}">
               <div class="figure1 figure-img"> <a href="${ctx}/detail/${product.productNumber}" target="_blank" data-recommend-product-id="${product.recommendProductId}"> <img title="${product.name}" src="${ctximg}/${product.picImg}" alt="${product.name}" width="296" height="296"> </a> </div>
               <p class="review"> <a href="${ctx}/detail/${product.productNumber}" target="_blank" data-recommend-product-id="${product.recommendProductId}">${product.content}</a> </p>
               <p class="author"> 来自于 ${product.userName} 的评价 <span class="date" data-date="${product.commentId}"></span> </p>

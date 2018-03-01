@@ -23,7 +23,7 @@
 .icon-fabu:before { content: "\e617"; }
 a:focus {outline: none;blr:expression(this.onFocus=this.blur());} 
 /*common set*/
-body{ font-family:"microsoft yahei";/* min-width:1080px;*/}
+body{ font-family:"microsoft yahei"; min-width:1080px;}
 a{ color:#666;}
 a:hover{text-decoration:none;color:#0080cb;}
 a:hover,a:visited,a:active,a:link{text-decoration:none;}
@@ -104,7 +104,7 @@ fieldset[disabled] .btn.active{background-color:#e5e5e5;border-color: #e5e5e5; c
 .txt01,.inputElem{ border:1px solid #e3e3e3; height:28px;line-height:20px; padding:3px 0;text-align:left;text-indent:5px;}
 .txt-sm{width:80px}.txt-nm{width:150px;}.txt-lg{width:200px;}
 /*step*/
-.step{ margin:10px auto; display:block; height:60px;}
+.step{ margin:0 auto; display:block; height:60px;}
 .step li{ position:relative; text-align:center;}
 .step .line_bg{ height:3px; background:#d9eaf3; display:inline-block; width:50%; top:13px; position:absolute; z-index:1;}
 .step .lbg-l{left:0;}

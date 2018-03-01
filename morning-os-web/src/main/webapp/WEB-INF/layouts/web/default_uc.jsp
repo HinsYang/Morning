@@ -52,7 +52,7 @@
             <div class="box-bd">
               <ul class="uc-nav-list">
                 <li><a href="${ctx}/uc/user/portal">我的个人中心</a></li>
-                <%--<li><a href="">消息通知<i class="J_miMessageTotal"></i></a></li>--%>
+                <li><a href="">消息通知<i class="J_miMessageTotal"></i></a></li>
                 <li><a href="${ctx}/uc/user/favorite">喜欢的商品</a></li>
                 <li><a href="${ctx}/uc/user/address">收货地址</a></li>
               </ul>
@@ -66,7 +66,7 @@
               <ul class="uc-nav-list">
                 <li><a href="" target="_blank">个人信息</a></li>
                 <li><a href="" target="_blank">修改密码</a></li>
-                <%--<li><a href="" target="_blank">社区VIP认证</a></li>--%>
+                <li><a href="" target="_blank">社区VIP认证</a></li>
               </ul>
             </div>
           </div>

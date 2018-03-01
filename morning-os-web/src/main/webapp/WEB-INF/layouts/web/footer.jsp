@@ -5,13 +5,14 @@
   <div class="container-fluid">
     <div class="footer-service">
       <ul class="list-service clearfix">
-        <li> <a rel="nofollow" href="${ctx}/index"><span class="glyphicon glyphicon-home"></span>首页</a> </li>
-        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-inbox"></span>分类</a> </li>
-        <li><a rel="nofollow" href="${ctx}/cart/list"><span class="glyphicon glyphicon-shopping-cart"></span>购物车</a> </li></li>
-        <li> <a rel="nofollow" href="${ctx}/uc/user/portal"><span class="glyphicon glyphicon-user"></span>我</a> </li>
+        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-wrench"></span>1小时快修服务</a> </li>
+        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-phone-alt"></span>7天无理由退货</a> </li>
+        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-usd"></span>15天免费换货</a> </li>
+        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-gift"></span>满150元包邮</a> </li>
+        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-map-marker"></span>520余家售后网点</a> </li>
       </ul>
     </div>
-    <%--<div class="footer-links clearfix">
+    <div class="footer-links clearfix">
       <dl class="col-links col-links-first">
         <dt>帮助中心</dt>
         <dd><a rel="nofollow" href="#">购物指南</a></dd>
@@ -53,13 +54,13 @@
         <p> <span class="J_serviceTime-normal" style="">周一至周日 8:00-18:00</span> <span class="J_serviceTime-holiday" style="display: none;">2月7日至13日服务时间 9:00-18:00</span><br>
           （仅收市话费） </p>
         <a rel="nofollow" class="btn btn-line-primary btn-small" href="#"><span class="glyphicon glyphicon-earphone"></span> 24小时在线客服</a> </div>
-    </div>--%>
+    </div>
   </div>
 </div>
 <!--     底部信息  end         --> 
 
 <!--     公司链接  begin       -->
-<%--<div class="site-info">
+<div class="site-info">
   <div class="container-fluid">
     <div class="logo"> <img src="${ctxsta}/os/images/logo.png"> </div>
     <div class="info-text">
@@ -72,7 +73,7 @@
     </div>
     <div class="info-links"> <a href="#"><img src="${ctxsta}/os/images/v-logo-2.png" alt="诚信网站"></a> <a href="#"><img src="${ctxsta}/os/images/v-logo-1.png" alt="可信网站"></a> <a href="#"><img src="${ctxsta}/os/images/v-logo-3.png" alt="网上交易保障中心"></a> </div>
   </div>
-</div>--%>
+</div>
 <!--     公司链接  end         --> 
 
 <!--     返回顶部  begin       -->

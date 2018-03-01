@@ -178,6 +178,9 @@
     <a class="btn btn-blue btn-lg f-size12 b-b0 b-l0 b-t0 b-r0 f-pl50 f-pr50 f-r3" href="javascript:closeClause();">已阅读并同意此条款</a>
   </center>
 </div>
+<footer class="footer clear">
+  <div class="footer_copyright"> © 2016<a href="https://git.oschina.net/Morning_/Morning" target="_blank"> yeungchihang </a>/ <span id="showsectime"></span> / <span id="TimeShow"></span> </div>
+</footer>
 <script src="${ctxsta}/common/jquery/jquery-2.1.4.min.js"></script> 
 <script src="${ctxsta}/common/bootstrap/js/bootstrap.min.js"></script> 
 <script src="${ctxsta}/os/user/js/register.js"></script> 

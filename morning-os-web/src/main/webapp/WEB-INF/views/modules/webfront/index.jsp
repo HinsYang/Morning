@@ -16,7 +16,7 @@
   <div class="home-hero">
     <div class="home-hero-slider">
       <div class="row">
-        <div class="col-xs-12 col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12">
           <div class="box">
             <ul class="ull">
               <c:forEach items="${indexCarouselImgs}" var="indexCarouselImg">
@@ -25,11 +25,11 @@
             </ul>
             <ol class="oll">
             </ol>
-            <%--<span class="left btnL glyphicon glyphicon-menu-right"></span> <span class="right btnL glyphicon glyphicon-menu-left"></span> </div>--%>
+            <span class="left btnL glyphicon glyphicon-menu-right"></span> <span class="right btnL glyphicon glyphicon-menu-left"></span> </div>
         </div>
       </div>
     </div>
-    <%--<div class="home-hero-sub row">
+    <div class="home-hero-sub row">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="span4">
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-    </div>--%>
+    </div>
   </div>
   <div class="home-star-goods xm-carousel-container" id="J_starProduct"> 
     <!-- <h2 class="title">冲破大风雪，我们坐在雪橇上  (๑•̀ㅂ•́)و✧ </h2> --> 
@@ -65,19 +65,19 @@
 <div class="page-main home-main">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-12">
+      <div class="col-md-12">
         <div class="container-fluid">
-          <%--<div id="J_topCategory" class="home-recm-box home-brick-box xm-plain-box">
+          <div id="J_topCategory" class="home-recm-box home-brick-box xm-plain-box"> 
             <!-- <h2 class="title">快奔驰过田野，我们欢笑又歌唱   φ(゜▽゜*)♪</h2> --> 
-          </div>--%>
+          </div>
           <div id="J_hotCategory" class="home-recm-box home-brick-box xm-plain-box"> 
             <!-- <h2 class="title">叮叮当，叮叮当，铃儿响叮当   (」o^∀^)」*゜</h2> --> 
           </div>
-          <%--<div id="J_popularPrudoct" class="home-recm-box home-brick-box home-brick-row-1-box xm-plain-box J_itemBox J_recommendBox is-visible">
-            <!-- <h2 class="title">马儿铃声响叮当，令人精神多欢畅   ヾ(≧▽≦*)o</h2> -->
-          </div>--%>
+          <div id="J_popularPrudoct" class="home-recm-box home-brick-box home-brick-row-1-box xm-plain-box J_itemBox J_recommendBox is-visible"> 
+            <!-- <h2 class="title">马儿铃声响叮当，令人精神多欢畅   ヾ(≧▽≦*)o</h2> --> 
+          </div>
           <div id="J_commentPrudoct" class="home-review-box xm-plain-box J_itemBox J_reviewBox is-visible"> 
-            <!-- <h2 class="title">我们今晚滑雪真快乐，把滑雪歌儿唱  (♥◠‿◠)ﾉ  ʅ(‾◡◝)</h2> -->
+            <!-- <h2 class="title">我们今晚滑雪真快乐，把滑雪歌儿唱  (♥◠‿◠)ﾉ  ʅ(‾◡◝)</h2> --> 
           </div>
         </div>
       </div>

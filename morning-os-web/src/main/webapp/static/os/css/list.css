@@ -1133,10 +1133,10 @@
 
 .shop-global-error {
 	padding: 150px 0 200px 10%;
-	/*background: url(../images/server_busy.jpg) no-repeat 80% center*/
+	background: url(../images/server_busy.jpg) no-repeat 80% center
 }
 .shop-global-error h2 {
-	width: 90%;
+	width: 50%;
 	line-height: 2.25;
 	padding-bottom: 30px
 }

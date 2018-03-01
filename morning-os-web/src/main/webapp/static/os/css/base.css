@@ -163,10 +163,6 @@ nav ol,nav ul {
 
 img {
 	border: 0;
-	width: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
 	-ms-interpolation-mode: bicubic
 }
 
@@ -243,8 +239,7 @@ table {
 }
 
 body {
-	min-width: 100%;
-	max-width: 100%;
+	min-width: 1226px;
 	background-color: #fff;
 	color: #333;
 	font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif
@@ -291,7 +286,7 @@ a:hover {
 	margin-left: auto;
 	padding-right: 0;
 	padding-left: 0;
-	/*width: 1226px*/
+	width: 1226px
 }
 
 .page-main {
@@ -1871,7 +1866,7 @@ textarea.input-text {
 
 .site-header {
 	z-index: 20;
-	/*height: 75pt*/
+	height: 75pt
 }
 
 .site-header,.site-header .container {
@@ -1880,20 +1875,19 @@ textarea.input-text {
 
 .site-header .header-logo {
 	float: left;
-	margin: 10px;
-	width: 48px;
-	height: 48px;
+	margin-top: 22px;
+	width: 62px
 }
 
 .site-header .header-nav {
 	float: left;
-	width: 100%;
+	width: 810px
 }
 
 .site-header .header-search {
 	float: right;
-	margin-top: 18px;
-	width: 80%;
+	margin-top: 30px;
+	width: 349px
 }
 
 .site-header .nav-list {
@@ -1901,11 +1895,11 @@ textarea.input-text {
 	z-index: 10;
 	float: left;
 	margin: 0;
-	padding: 9pt 0 0 0;
-	width: 100%;
+	padding: 9pt 0 0 30px;
+	width: 820px;
 	height: 88px;
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 1pc
 }
 
 .site-header .nav-item {
@@ -1930,7 +1924,7 @@ textarea.input-text {
 	position: relative;
 	float: left;
 	padding-right: 15px;
-	width: 20%;
+	width: 127px
 }
 
 .site-header .nav-category .link-category {
@@ -2076,9 +2070,9 @@ textarea.input-text {
 }
 
 .site-header .header-search .zySearch .search-input {
-	/*margin-right: 5px;*/
+	margin-right: 5px;
 	padding: 0 10px;
-	width: 75%;
+	width: 268px;
 	height: 35px;
 	border: 1px solid #d0d0d0;
 	color: #999;
@@ -2094,7 +2088,7 @@ textarea.input-text {
 	display: inline-block;
 	margin-bottom: 0;
 	padding: 0;
-	width: 25%;
+	width: 76px;
 	height: 35px;
 	border: 0 none;
 	border-radius: 0;
@@ -2252,7 +2246,7 @@ textarea.input-text {
 }
 
 .site-footer .footer-service {
-	padding: 5% 0;
+	padding: 27px 0;
 	border-bottom: 1px solid #e0e0e0
 }
 
@@ -2264,7 +2258,7 @@ textarea.input-text {
 
 .site-footer .list-service li {
 	float: left;
-	width: 24.8%;
+	width: 19.8%;
 	height: 25px;
 	border-left: 1px solid #e0e0e0;
 	text-align: center;

@@ -28,9 +28,7 @@
         <div class="row">
           <div class="span13  J_mi_goodsPic_block goods-detail-left-info">
             <div class="goods-pic-box" id="J_mi_goodsPicBox">
-              <div class="goods-big-pic J_bigPicBlock">
-                <img class="J_goodsBigPic" id="J_BigPic">
-              </div>
+              <div class="goods-big-pic J_bigPicBlock"> <img class="J_goodsBigPic" id="J_BigPic"></div>
               <div class="goods-pic-loading">
                 <div class="loader loader-gray"></div>
               </div>
@@ -231,6 +229,22 @@
           <div class="span8 service-day-img"> <img src="${ctxsta}/os/images/timg.jpg" alt="售后服务与退换货流程"> </div>
           <div class="span11 service-detail-block">
             <div class="service-detail-content" id="J_serviceCon">
+              <h3 class="title"></h3>
+              <h4 class="sub-title"><span class="tit">A</span>phone飞车: </h4>
+              <p class="content"> 1）产品自签收后7天内无理由退货，14日内保修<br>
+                2）以下情况不能申请售后服务：<br>
+                a. 未经授权的修理、改装、改动、碰撞、误用、进水、及不正确的使用所造成的问题。<br>
+                b. 商品的外包装、附件、说明书不完整；发票缺失或涂改。<br>
+                c. 产品已使用（产品自身质量问题除外）。<br>
+                d. 其他不符合售后流程的情况。<br>
+                3）产品自身质量问题范围：<br>
+                a. 汽车不正常工作且不存在电量低、电池松动或接触点未连好、电池没电、电子部件损坏、开关键处于关的情况。<br>
+                b. 电池不能充电且不存在电池连接点接触不好的情况。<br>
+                c. 玩用时间短且不存在电池能量低、能量耗尽的情况。<br>
+                d. 低速度且不存在电池没电、玩用的地面不平的情况。<br>
+                e. wifi链接失败且不存在电量不足、超出遥控范围的情况。<br>
+                3）小米之家暂不办理自提和退换货业务，现阶段仅提供网上办理及电话办理两种方式<br>
+              </p>
               <h4 class="sub-title"><span class="tit">A</span>米兔积木机器人: </h4>
               <p class="content"> 1.产品自签收后7天内无理由退货；7天内质量问题，可以退货、换货；15日内产品质量问题可以换货或者维修；1年内，主控、电机、适配器产品质量问题可以维修，积木件不保。<br>
                 2.以下情况不能申请售后服务：<br>
@@ -238,7 +252,9 @@
                 b. 已超过三包有效期；<br>
                 c. 因不可抗力造成的损坏；<br>
                 d. 不符合《产品性能故障表》所列性能故障的情况；<br>
+                e. 因人为原因导致本产品及其配件产生《产品性能故障表》所列性能故障。<br>
                 3.积木件超出15天，1年内：自您签收日起12个月内，积木件缺失、损坏可享受一次免费补换件的机会，补换件数量不超过10个。请联系北京爱其科技有限公司服务热线：400-012-6281。<br>
+                4.小米之家暂不办理自提和退换货业务，现阶段仅提供网上办理及电话办理两种方式。<br>
               </p>
             </div>
           </div>
@@ -248,8 +264,8 @@
     <!--售后服务与退换货流程--> 
     <!-- 商品详情售后服务 end -->
     
-    <%--<div id="J_alsoBuyWrap"  style='margin-bottom:100px;'></div>--%>
-    <%--<div id="J_recentGoods"  style='margin-top:100px;padding-bottom:130px;'></div>--%>
+    <div id="J_alsoBuyWrap"  style='margin-top:100px;'></div>
+    <div id="J_recentGoods"  style='margin-top:100px;padding-bottom:130px;'></div>
   </div>
   <!-- 商品详情 end --> 
   

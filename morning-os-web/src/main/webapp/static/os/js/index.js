@@ -1,8 +1,8 @@
 $(function() {
 	show_star_product(); // 明星单品
-	//show_top_category(); // 置顶分类
+	show_top_category(); // 置顶分类
 	show_hot_category(); // 热门分类
-	//show_popular_product(); // 为你推荐
+	show_popular_product(); // 为你推荐
 	show_comment_product(); // 热评产品
 });
 
@@ -101,7 +101,7 @@ $(function() {
 	})
 	//自动播放
 	var i = 0;
-	var t = setInterval(move, 3000);
+	var t = setInterval(move, 1500);
 	//自动播放核心函数
 
 	function move() {
