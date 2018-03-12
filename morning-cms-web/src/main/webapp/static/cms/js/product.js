@@ -317,7 +317,7 @@ $(function() {
             shade : 0.3,
             time : 1500
         });
-        $('input[name="picImg"]').val("images/goods/20170226/1471797894441.jpg");
+        $('input[name="picImg"]').val("images/goods/20170226/1471797894445.jpg");
     })
 })
 

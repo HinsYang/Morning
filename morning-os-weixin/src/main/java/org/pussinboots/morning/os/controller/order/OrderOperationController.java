@@ -2,7 +2,9 @@ package org.pussinboots.morning.os.controller.order;
 
 import org.pussinboots.morning.common.base.BaseController;
 import org.pussinboots.morning.common.constant.CommonReturnCode;
+import org.pussinboots.morning.order.entity.OrderProduct;
 import org.pussinboots.morning.order.entity.OrderShipment;
+import org.pussinboots.morning.order.service.IOrderProductService;
 import org.pussinboots.morning.order.service.IOrderService;
 import org.pussinboots.morning.order.service.IOrderShipmentService;
 import org.pussinboots.morning.os.common.result.OsResult;
@@ -10,13 +12,12 @@ import org.pussinboots.morning.os.common.util.SingletonLoginUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+
+import java.util.List;
 
 /**
  * 
@@ -36,7 +37,7 @@ public class OrderOperationController extends BaseController {
 	private IOrderService orderService;
 	@Autowired
 	private IOrderShipmentService orderShipmentService;
-	
+
 	/**
 	 * PUT 取消订单
 	 * @return
@@ -73,4 +74,6 @@ public class OrderOperationController extends BaseController {
 		Integer count = orderShipmentService.update(orderShipment, SingletonLoginUtils.getUserId());
 		return new OsResult(CommonReturnCode.SUCCESS, count);
 	}
+
+
 }

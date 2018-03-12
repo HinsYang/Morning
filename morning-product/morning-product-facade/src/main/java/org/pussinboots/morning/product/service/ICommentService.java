@@ -33,5 +33,6 @@ public interface ICommentService extends IService<Comment> {
 	 * @return
 	 */
 	Integer updateLike(Long commentId);
-	
+
+    Integer insertComment(Comment comment);
 }

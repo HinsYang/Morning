@@ -17,7 +17,7 @@
               <p class="author"> 来自于 ${product.userName} 的评价 <span class="date" data-date="${product.commentId}"></span> </p>
               <div class="info">
                 <h3 class="title"><a title="${product.name}" href="${ctx}/detail/${product.productNumber}" target="_blank" data-recommend-product-id="${product.recommendProductId}">${product.name}</a></h3>
-                <span class="sep">|</span>
+                <%--<span class="sep">|</span>--%>
                 <p class="price"> <span class="num">${product.showPrice}</span>元 </p>
               </div>
             </li>

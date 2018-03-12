@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .page-main {
-	padding: 38px 0;
+	/*padding: 38px 0;*/
 	border-top:2px solid #ff6700
 }
 
@@ -40,7 +40,8 @@
 }
 
 .section-order {
-	padding-left: 183px;
+	/*padding-left: 183px;*/
+	padding-top: 130px;
 	position: relative
 }
 
@@ -49,8 +50,8 @@
 	height: 84px;
 	line-height: 84px;
 	position: absolute;
-	top: 40px;
-	left: 50px;
+	top: 30px;
+	left: 135px;
 	font-size: 84px;
 	color: #83c44e;
 	text-align: center;

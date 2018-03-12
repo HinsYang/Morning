@@ -643,11 +643,11 @@
 .goods-detail .goods-detail-info {
 	background: #fff;
 	padding-top: 40px;
-	padding-bottom: 50px
+	/*padding-bottom: 50px*/
 }
 
 .goods-detail .goods-pic-box, .goods-detail .goods-info-box {
-	min-height: 550px;
+	min-height: 400px;
 	_height: 550px
 }
 
@@ -665,9 +665,9 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	height: 482px;
-	width: 482px;
-	left: 186px;
+	height: 360px;
+	width: 360px;
+	/*left: 186px;*/
 	position: absolute;
 	top: 0px;
 	z-index: 10;
@@ -680,8 +680,8 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	width: 482px;
-	height: 482px
+	width: 360px;
+	height: 360px
 }
 
 .goods-detail .goods-pic-loading {
@@ -689,8 +689,8 @@
 	height: 20px;
 	position: absolute;
 	z-index: 5;
-	top: 255px;
-	left: 410px
+	top: 155px;
+	left: 180px;
 }
 
 .goods-detail .goods-detail-left-info {
@@ -1010,7 +1010,9 @@
 }
 
 .goods-detail .goods-info-rightbox {
-	position: relative
+	position: relative;
+	padding:0 15px;
+	padding-bottom: 20px;
 }
 
 .goods-detail .goods-info-leftborder {
@@ -1344,7 +1346,7 @@
 }
 
 .goods-detail .goods-info-head .goods-info-head-cart .goods-add-cart-btn, .goods-detail .goods-info-head .goods-info-head-cart .goods-over-btn {
-	width: 261px;
+	width: 100%;
 	height: 48px;
 	line-height: 48px;
 	font-size: 16px;
@@ -1390,7 +1392,7 @@
 
 .goods-detail .goods-info-head .goods-info-head-cart .goods-collect-btn {
 	height: 48px;
-	width: 140px;
+	width: 130px;
 	display: block;
 	float: left;
 	text-align: center;
@@ -1748,7 +1750,7 @@
 
 .goods-detail-nav .detail-list {
 	*zoom: 1;
-	width: 680px;
+	/*width: 680px;*/
 	margin: 0 auto;
 	list-style-type: none;
 	height: 60px
@@ -1765,7 +1767,7 @@
 
 .goods-detail-nav .detail-list li {
 	float: left;
-	width: 170px;
+	width: 33%;
 	height: 18px;
 	margin-top: 20px;
 	line-height: 18px;
@@ -1777,11 +1779,12 @@
 .goods-detail-nav .detail-list li i {
 	color: #b0b0b0;
 	font-style: normal;
-	vertical-align: 1px
+	vertical-align: 1px;
+	font-size: 14px;
 }
 
 .goods-detail-nav .detail-list li a {
-	width: 170px;
+	width: 100%;
 	display: block;
 	cursor: pointer;
 	border-right: 1px solid #e0e0e0;
@@ -1863,7 +1866,7 @@
 }
 
 .goods-detail-nav-name-block {
-	padding-top: 40px;
+	padding-top: 10px;
 	margin-bottom: 10px
 }
 
@@ -1894,8 +1897,8 @@
 }
 
 .goods-detail-param .param-list {
-	padding-top: 50px;
-	padding-left: 35px;
+	padding-top: 30px;
+	padding-left: 30px;
 	*zoom: 1
 }
 
@@ -1940,7 +1943,7 @@
 }
 
 .goods-detail-param .param-list .goods-tech-spec {
-	width: 940px
+	width: 100%;
 }
 
 .goods-detail-param .param-list .goods-tech-spec ul {
@@ -1964,7 +1967,7 @@
 }
 
 .goods-detail-param .param-list .goods-tech-spec li {
-	width: 290px;
+	width: 43%;
 	height: 44px;
 	font-size: 14px;
 	line-height: 20px;
@@ -2486,7 +2489,7 @@
 .goods-detail-comment .goods-detail-comment-timeline .comment-timeline-list .timelineunit {
 	border-left: 1px solid #e0e0e0;
 	padding-left: 35px;
-	padding-bottom: 45px;
+	padding-bottom: 15px;
 	position: relative
 }
 
@@ -2540,7 +2543,7 @@
 }
 
 .goods-detail-comment .goods-detail-comment-timeline .comment-timeline-list .timelineunit .line-time {
-	font-size: 12px;
+	font-size: 14px;
 	color: #b0b0b0;
 	line-height: 20px;
 	font-weight: normal
@@ -2548,7 +2551,7 @@
 
 .goods-detail-comment .goods-detail-comment-timeline .comment-timeline-list .timelineunit .line-content {
 	margin-top: 10px;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 22px;
 	overflow: hidden;
 	_zoom: 1
@@ -2649,7 +2652,7 @@
 
 .goods-detail-comment .goods-detail-comment-timeline .comment-timeline-list .timelineunit .line-foot {
 	*zoom: 1;
-	margin-top: 20px;
+	margin-top: 10px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #e0e0e0
 }
@@ -2671,7 +2674,7 @@
 
 .goods-detail-comment .goods-detail-comment-timeline .comment-timeline-list .timelineunit .line-foot .line-right {
 	float: right;
-	font-size: 12px;
+	font-size: 13px;
 	color: #b0b0b0;
 	margin-right: 10px;
 	cursor: pointer
@@ -2774,7 +2777,7 @@
 .goods-detail-question-block .question-input .input-block {
 	height: 40px;
 	line-height: 40px;
-	width: 396px;
+	width: 340px;
 	color: #333;
 	padding-left: 24px;
 	border: 1px solid #e0e0e0;
@@ -2789,7 +2792,8 @@
 	height: 40px;
 	width: 150px;
 	line-height: 40px;
-	margin-left: -5px
+	/*margin-left: -5px*/
+	margin-top: 10px;
 }
 
 .goods-detail-question-block .question-order {
@@ -2822,7 +2826,7 @@
 
 .goods-detail-question-block .question-content {
 	*zoom: 1;
-	padding-bottom: 40px
+	/*padding-bottom: 40px*/
 }
 
 .goods-detail-question-block .question-content:before, .goods-detail-question-block .question-content:after {
@@ -2837,9 +2841,9 @@
 .goods-detail-question-block .question-content li {
 	*zoom: 1;
 	float: left;
-	margin-left: 62px;
-	margin-top: 44px;
-	width: 544px
+	/*margin-left: 62px;*/
+	margin-top: 26px;
+	width: 100%;
 }
 
 .goods-detail-question-block .question-content li:before, .goods-detail-question-block .question-content li:after {
@@ -2856,7 +2860,7 @@
 }
 
 .goods-detail-question-block .question-content li .left-hand {
-	width: 62px
+	/*width: 62px*/
 }
 
 .goods-detail-question-block .question-content li .hand-block {
@@ -2869,6 +2873,7 @@
 	border-radius: 50%;
 	position: relative;
 	margin-top: -5px;
+	padding: 8px;
 	cursor: pointer;
 	border: 1px solid #eee;
 	-webkit-transition: all .4s ease-out;
@@ -2905,15 +2910,16 @@
 }
 
 .goods-detail-question-block .question-content li .mid-detail {
-	width: 372px
+	margin-left: 10px;
+	width: 78%
 }
 
 .goods-detail-question-block .question-content li .mid-detail .question-title {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: normal;
 	color: #333;
 	line-height: 18px;
-	width: 380px;
+	/*width: 380px;*/
 	overflow: hidden;
 	_zoom: 1;
 	white-space: nowrap;
@@ -2927,11 +2933,11 @@
 	color: #757575;
 	font-size: 14px;
 	line-height: 24px;
-	padding-right: 20px;
+	/*padding-right: 20px;*/
 	margin-top: 10px;
-	height: 72px;
+	/*height: 72px;*/
 	word-break: break-word;
-	width: 380px;
+	/*width: 380px;*/
 	overflow: hidden;
 	_zoom: 1
 }
@@ -2960,8 +2966,9 @@
 }
 
 .goods-detail-question-block .question-content li {
-	margin-left: 45px;
-	width: 556px
+	/*margin-left: 45px;*/
+	padding: 0 45px;
+	/*width: 100%;*/
 }
 
 .goods-detail-question-block .question-null-content {
@@ -2976,6 +2983,7 @@
 .goods-detail-question-block .more-question {
 	font-size: 14px;
 	text-align: center;
+	margin-top: 10px;
 	padding-left: 44px;
 	padding-right: 44px
 }
@@ -3082,13 +3090,13 @@
 }
 
 .goods-detail-service-block .service-detail-content {
-	margin-top: 40px;
-	height: 255px;
-	padding-left: 60px;
+	margin-top: 10px;
+	/*height: 255px;*/
+	padding-left: 30px;
 	padding-right: 30px;
-	width: 640px;
-	*overflow: auto;
-	overflow-y: auto
+	/*width: 640px;*/
+	/**overflow: auto;
+	overflow-y: auto*/
 }
 
 .goods-detail-service-block .service-detail-content .title {
@@ -3120,7 +3128,8 @@
 	font-size: 14px;
 	color: #757575;
 	line-height: 30px;
-	margin-top: 15px
+	margin-top: 10px;
+	margin-bottom: 20px
 }
 
 .goods-sub-bar {

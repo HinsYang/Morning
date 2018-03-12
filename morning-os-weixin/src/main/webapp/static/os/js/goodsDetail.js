@@ -1,20 +1,20 @@
 $(function() {
-	question_help(); // 默认显示最有帮助商品提问
-	comment_sup(); // 最有帮助评价
+	//question_help(); // 默认显示最有帮助商品提问
+	//comment_sup(); // 最有帮助评价
 	comment_time_line(); // 最新评价
 });
 
 /**
  * 导航分类栏显示及颜色变换
  */
-$(function() {
+/*$(function() {
 	$('#J_navCategory').mouseover(function() {
 		$('.site-category').css('display', 'block');
 	})
 	$('#J_navCategory').mouseout(function() {
 		$('.site-category').css('display', 'none');
 	})
-});
+});*/
 
 /**
 * 图片介绍动画切换效果
@@ -34,7 +34,7 @@ $(function() {
 /**
  * 导航悬浮
  */
-$(window).scroll(function() {
+/*$(window).scroll(function() {
 	var $this = $(this);
 	var targetTop = $(this).scrollTop();
 	var height = $(window).height();
@@ -60,12 +60,13 @@ $(window).scroll(function() {
 		$(".goods-sub-bar .detail-list").find("li").removeClass("current");
 		$(".goods-sub-bar .detail-list").find("li").eq(3).addClass("current");
 	}
-});
+});*/
 
 
 /**
  * 导航悬浮点击事件
  */
+/*
 var subNav_active = $(".current");
 var subNav_scroll = function(target) {
 	subNav_active.removeClass("current");
@@ -104,6 +105,7 @@ $(".goods-info-head-userfaq .detail-list a").click(function() {
 		return false;
 	}
 });
+*/
 
 /**
  * 商品规格选择
@@ -286,6 +288,7 @@ function add_question(obj) {
 	data.productId = productId;
 	data.content = $(obj).prev().val()  ;
 	layer.confirm('您确认提交此问题吗？', {
+        offset: ['260px', '78px'],
 		btn : [ '确定', '取消' ] //按钮
 	}, function() {
 		$.ajax({

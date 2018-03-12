@@ -32,7 +32,7 @@
               <dd class="${lowerCategoriy.categoryId eq category.categoryId ? 'active':''}"><a href="${ctx}/list?categoryId=${lowerCategoriy.categoryId}">${lowerCategoriy.name }</a></dd>
             </c:forEach>
           </dl>
-          <a class="more J_filterToggle" href="javascript:void(0);" onclick="showMornCategory(this);" >更多<i class="glyphicon glyphicon-chevron-down"></i></a> </div>
+          <a class="more J_filterToggle" href="javascript:void(0);" onclick="showMornCategory(this);" ><i class="glyphicon glyphicon-chevron-down"></i></a> </div>
       </div>
     </div>
   </div>
@@ -47,8 +47,8 @@
           <li class="${sort eq 1 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=1" rel="nofollow">新品</a></li>
           <li class="${sort eq 2 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=2" rel="nofollow">销量</a></li>
           <li class="${sort eq 6 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=6" rel="nofollow">价格 <i class="glyphicon glyphicon-arrow-up"></i></a></li>
-          <li class="${sort eq 7 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=7" rel="nofollow">价格 <i class="glyphicon glyphicon-arrow-down"></i></a></li>
-          <li class="${sort eq 3 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=3"  rel="nofollow">评论最多</a></li>
+          <%--<li class="${sort eq 7 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=7" rel="nofollow">价格 <i class="glyphicon glyphicon-arrow-down"></i></a></li>
+          <li class="${sort eq 3 ? 'active':''}"><a href="${ctx}/list?categoryId=${category.categoryId}&sort=3"  rel="nofollow">评论最多</a></li>--%>
         </ul>
       </div>
       <div class="goods-list-box">
@@ -60,12 +60,12 @@
               <h2 class="title"><a title="${product.name}" href="${ctx}/detail/${product.productNumber}">${product.name}</a></h2>
               <p class="price">${product.showPrice}元</p>
               <div class="thumbs">
-                <ul class="thumb-list clearfix">
+                <%--<ul class="thumb-list clearfix">
                   <li data-gid="${product.productNumber}"><img src="${ctximg}/${product.picImg}" width="34" height="34" title="${product.introduce}" alt="${product.name}" /></li>
-                </ul>
+                </ul>--%>
                 <p class="desc"> ${product.introduce} </p>
               </div>
-              <div class="actions clearfix"> <a class="btn-like J_likeGoods" data-pid="${product.productNumber}" onclick="add_favorite(this);" href="javascript: void(0);"><i class="glyphicon glyphicon-heart-empty"></i> <span>喜欢</span></a> <a class="btn-buy J_buyGoods" data-gid="${product.productNumber}" href="${ctx}/detail/${product.productNumber}"><span>加入购物车</span> <i class="glyphicon glyphicon-shopping-cart"></i></a> </div>
+              <%--<div class="actions clearfix"> <a class="btn-like J_likeGoods" data-pid="${product.productNumber}" onclick="add_favorite(this);" href="javascript: void(0);"><i class="glyphicon glyphicon-heart-empty"></i> <span>喜欢</span></a> <a class="btn-buy J_buyGoods" data-gid="${product.productNumber}" href="${ctx}/detail/${product.productNumber}"><span>加入购物车</span> <i class="glyphicon glyphicon-shopping-cart"></i></a> </div>--%>
               <div class="flags">
                 <c:if test="${not empty product.labelName}">
                   <div class="flag">${product.labelName}</div>
@@ -124,6 +124,7 @@
 							$(obj).toggleClass("btn-liked");
 						} else {
 							layer.alert(result.message, {
+                                offset: ['260px', '78px'],
 								icon : 2
 							});
 						}
@@ -139,6 +140,7 @@
 							$(obj).toggleClass("btn-liked");
 						} else {
 							layer.alert(result.message, {
+                                offset: ['260px', '78px'],
 								icon : 2
 							});
 						}

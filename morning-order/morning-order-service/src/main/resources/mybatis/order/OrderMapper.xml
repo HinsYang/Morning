@@ -51,6 +51,7 @@
 		<result column="order_amount" property="orderAmount" />
 		<result column="order_score" property="orderScore" />
 		<result column="pay_amount" property="payAmount" />
+		<result column="create_time" property="createTime" />
     	<collection property="orderProducts" ofType="org.pussinboots.morning.order.entity.OrderProduct">
 			<result column="product_number" property="productNumber" />
 			<result column="name" property="name" />
@@ -62,6 +63,7 @@
 			<result column="buy_number" property="buyNumber" />
 			<result column="product_score" property="productScore" />
 			<result column="product_amount" property="productAmount" />
+			<result column="comment_status" property="commentStatus" />
   		</collection>
   	</resultMap>	
   	
@@ -80,6 +82,7 @@
 		<result column="order_score" property="orderScore" />
 		<result column="pay_amount" property="payAmount" />
 		<result column="buyNumber" property="buyNumber" />
+		<result column="create_time" property="createTime" />
         <association property="orderShipment" resultMap="OrderShipmentResultMap"></association>    
     	<collection property="orderProducts" ofType="org.pussinboots.morning.order.entity.OrderProduct">
 			<result column="product_number" property="productNumber" />
@@ -92,6 +95,7 @@
 			<result column="buy_number" property="buyNumber" />
 			<result column="product_score" property="productScore" />
 			<result column="product_amount" property="productAmount" />
+			<result column="comment_status" property="commentStatus" />
   		</collection>
     	<collection property="orderStatusList" ofType="org.pussinboots.morning.order.entity.OrderStatus">
 			<result column="order_status" property="orderStatus" />
@@ -118,7 +122,7 @@
     		create_time, 
     		order_amount, 
     		order_score, 
-    		pay_amount, 
+    		pay_amount,
 		    product_number, 
 		    name, 
 		    pic_img, 
@@ -128,7 +132,8 @@
 		    score, 
 		    p.buy_number, 
 		    product_score, 
-		    product_amount
+		    product_amount,
+			comment_status
     	FROM (
 	    	SELECT
 	    		*
@@ -248,7 +253,7 @@
     	AND user_id = #{userId}
     </select>
 
-	<!-- 根据用户ID、订单编号查找订单信息 -->
+	<!-- 根据订单编号查找订单信息 -->
 	<select id="getOrderById" resultMap="OrderVOResultMap">
 		SELECT
 		o.order_id,
@@ -261,6 +266,7 @@
 		invoice_type,
 		invoice_title,
 		o.order_status AS orderStatus,
+		o.create_time,
 		order_amount,
 		order_score,
 		pay_amount,

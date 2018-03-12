@@ -46,6 +46,7 @@ function comment_like(obj, commentId) {
 				window.location.href = baselocation + '/pass/login';
 			} else {
 				layer.alert(result.message, {
+                    offset: ['260px', '78px'],
 					icon : 2
 				});
 			}

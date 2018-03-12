@@ -39,11 +39,11 @@
 	 */
 	$(function() {
 		//手动滚动
-		$('#J_recommend_stat .pagination li').hover(function() {
+		/*$('#J_recommend_stat .pagination li').hover(function() {
 			clearInterval(timer);
 		}, function() {
 			timer = setInterval(active, 5000);
-		})
+		})*/
 
 		$('#J_recommend_stat .pagination li').eq(1).click(function() {
 			$('.J_statList').css({
@@ -76,11 +76,11 @@
 		}
 
 		//鼠标事件
-		$('.J_statList').hover(function() {
+		/*$('.J_statList').hover(function() {
 			clearInterval(timer);
 		}, function() {
 			timer = setInterval(active, 5000);
-		})
+		})*/
 	});
 
 	/**

@@ -84,6 +84,7 @@ $(function() {
 		var b = $("#J_addressList").find(".selected").length;
 		if (0 >= b) {
 			layer.alert("请选择地址！", {
+                offset: ['260px', '78px'],
 				icon : 2
 			});
 			return !1;
@@ -92,6 +93,7 @@ $(function() {
 		var t = $("#invoice_title").val();
 		if (a !== "1" && (strLen(t) < 1)) {
 			layer.alert("发票抬头名称不能为空!", {
+                offset: ['260px', '78px'],
 				icon : 2
 			});
 			return !1;

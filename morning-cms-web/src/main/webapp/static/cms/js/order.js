@@ -44,7 +44,7 @@ function invoiceTypeFormatter(value) {
 
 function orderStatusFormatter(value) {
     if (value == 1){
-        return '<span class="label label-default">订单提交</span>'
+        return '<span class="label label-warning">订单提交</span>'
     }
     else if (value == 2){
         return '<span class="label label-primary">已付款</span>'
@@ -62,7 +62,7 @@ function orderStatusFormatter(value) {
         return '<span class="label label-success">确认收货</span>'
     }
     else if (value == 11){
-        return '<span class="label label-warning">自动取消订单</span>'
+        return '<span class="label label-danger">自动取消订单</span>'
     }
     else if (value == 12){
         return '<span class="label label-danger">手动取消订单</span>'

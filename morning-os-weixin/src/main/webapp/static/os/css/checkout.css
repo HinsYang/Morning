@@ -394,7 +394,7 @@
 }
 
 .section-goods .goods-list .col-name {
-	width: 650px
+	/*width: 650px*/
 }
 
 .section-goods .goods-list .col-name a {
@@ -434,7 +434,8 @@
 
 .section-goods .goods-list .disable {
 	opacity: .5;
-	filter: alpha(opacity = 50) \9
+	filter: alpha(opacity = 50) \9
+
 }
 
 .section-count {
@@ -758,7 +759,8 @@
 	background-color: #f5f5f5;
 	background-color: rgba(0, 0, 0, 0.1);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#19000000",
-		endColorstr="#19000000") \9
+		endColorstr="#19000000") \9
+
 }
 
 .ecard-box .loading .loader {

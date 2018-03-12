@@ -7,15 +7,16 @@
         <span class="hand-number">${question.goodCount}</span> </div>
     </div>
     <div class="mid-detail float ">
-      <h3 class="question-title"><a target="_blank" title="${question.content}">${question.content}</a></h3>
+      <h3 class="question-title"><a target="_blank" title="${question.content}">${question.content} </a></h3>
       <div class="answer-content figcaption">
-        <p title="${question.answerContent}"> ${question.answerContent} </p>
+        <p title="${question.answerContent}"> ${question.answerContent} <div class="answer-content-date"><fmt:formatDate value="${question.answerTime}" pattern="yyyy年MM月dd日" /></div></p>
+
       </div>
     </div>
-    <div class="right-date float">
+    <%--<div class="right-date float">
       <div class="question-title-date"><fmt:formatDate value="${question.createTime}" pattern="yyyy年MM月dd日" /></div>
       <div class="answer-content-date"><fmt:formatDate value="${question.answerTime}" pattern="yyyy年MM月dd日" /></div>
-    </div>
+    </div>--%>
   </li>
 </c:forEach>
 <script type="text/javascript">
@@ -38,6 +39,7 @@ function question_like(obj, questionId) {
 				window.location.href = baselocation + '/pass/login';
 			} else {
 				layer.alert(result.message, {
+                    offset: ['260px', '78px'],
 					icon : 2
 				});
 			}

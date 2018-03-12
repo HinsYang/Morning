@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 .page-main {
+	min-height: 500px;
 	padding: 38px 0
 }
 
 .buy-succ-box {
-	margin-bottom: 60px;
+	/*margin-bottom: 60px;*/
 	padding: 0 62px;
-	height: 180px;
+	/*height: 180px;*/
 	background-color: #fff
 }
 
@@ -18,14 +19,15 @@
 
 .buy-succ-box .goods-img {
 	float: left;
-	width: 110px;
-	height: 110px
+	/*width: 110px;*/
+	/*height: 110px*/
 }
 
 .buy-succ-box .goods-info {
 	float: left;
 	margin-top: 16px;
-	margin-left: 20px
+	margin-left: 20px;
+	text-align: center;
 }
 
 .buy-succ-box .goods-info h3 {
@@ -43,11 +45,11 @@
 
 .buy-succ-box .actions {
 	float: right;
-	margin-top: 70px
+	margin-top: 30px
 }
 
 .buy-succ-box .actions .btn {
-	width: 180px;
+	width: 220px;
 	margin-left: 12px
 }
 

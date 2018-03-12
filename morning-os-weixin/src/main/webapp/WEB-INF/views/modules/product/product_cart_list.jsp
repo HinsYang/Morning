@@ -19,11 +19,11 @@
       <table id="cartTable">
         <thead>
           <tr>
-            <th>选择商品</th>
+            <th></th>
             <th>商品名称</th>
             <th>单价</th>
             <th>数量</th>
-            <th>小计</th>
+            <th style="display: none">小计</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -38,19 +38,19 @@
               <td class="count"><div class="change-goods-num clearfix J_changeGoodsNum"> <a href="javascript:void(0)" class="reduce">-</a>
                   <input class="count-input goods-num J_goodsNum" type="text" value="${shoppingCart.buyNumber}" readonly/>
                   <a href="javascript:void(0)" class="add">+</a> </div></td>
-              <td class="subtotal">${shoppingCart.buyNumber * shoppingCart.price}</td>
+              <td class="subtotal" style="display: none">${shoppingCart.buyNumber * shoppingCart.price}</td>
               <td class="operation"><div class="col-action"><a href="javascript:void(0);" title="删除" class="del J_delGoods"  data-sid="${shoppingCart.productSpecNumber}" onclick="cart_list_delete(this,${shoppingCart.productSpecNumber})"><i class="glyphicon glyphicon-remove"></i></a> </div></td>
             </tr>
           </c:forEach>
         </tbody>
       </table>
       <div class="cart-bar clearfix" id="J_cartBar">
-        <div class="section-left"> <a href="${ctx}/list?categoryId=1">继续购物</a> <span class="cart-total">共 <i id="J_cartTotalNum"></i> 件商品，已选择 <i id="J_selTotalNum"></i> 件</span></div>
+        <div class="section-left"> <%--<a href="${ctx}/list?categoryId=1">继续购物</a>--%> <span class="cart-total">共 <i id="J_cartTotalNum"></i> 件商品，已选择 <i id="J_selTotalNum"></i> 件</span></div>
         <span class="total-price"> 合计（不含运费）：<em id="J_cartTotalPrice"></em>元 </span> <a href="javascript:void(0);" class="btn btn-a btn btn-primary" id="J_goCheckout" onclick="J_goCheckout();">去结算</a>
         <div class="no-select-tip hide" id="J_noSelectTip"> 请勾选需要结算的商品 <i class="arrow arrow-a"></i> <i class="arrow arrow-b"></i> </div>
       </div>
     </div>
-  <div class="cart-empty hide" id="J_cartEmpty">
+        <div class="cart-empty hide" id="J_cartEmpty">
             <h2>您的购物车还是空的！</h2>
             <p class="login-desc">登录后将显示您之前加入的商品</p>
             <a href="#" class="btn btn-primary btn-login" id="J_loginBtn">立即登录</a>

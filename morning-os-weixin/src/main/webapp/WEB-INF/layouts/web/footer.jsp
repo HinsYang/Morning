@@ -6,7 +6,7 @@
     <div class="footer-service">
       <ul class="list-service clearfix">
         <li> <a rel="nofollow" href="${ctx}/index"><span class="glyphicon glyphicon-home"></span>首页</a> </li>
-        <li> <a rel="nofollow" href="#"><span class="glyphicon glyphicon-inbox"></span>分类</a> </li>
+        <li> <a rel="nofollow" href="${ctx}/list?categoryId=1"><span class="glyphicon glyphicon-inbox"></span>分类</a> </li>
         <li><a rel="nofollow" href="${ctx}/cart/list"><span class="glyphicon glyphicon-shopping-cart"></span>购物车</a> </li></li>
         <li> <a rel="nofollow" href="${ctx}/uc/user/portal"><span class="glyphicon glyphicon-user"></span>我</a> </li>
       </ul>
@@ -76,9 +76,9 @@
 <!--     公司链接  end         --> 
 
 <!--     返回顶部  begin       -->
-<div class="back-to-top">
+<%--<div class="back-to-top">
   <div class="container-fluid">
     <p id="back-to-top"><a href="#top"><span class="glyphicon glyphicon-menu-up" style="font-size:30px;color:#ff6700;"></span>回到顶部</a></p>
   </div>
-</div>
+</div>--%>
 <!--     返回顶部  end         --> 

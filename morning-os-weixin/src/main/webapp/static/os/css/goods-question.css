@@ -27,7 +27,7 @@
 
 .goods-question-order-block {
 	margin-top: 30px;
-	padding-left: 62px
+	padding-left: 30px
 }
 
 .goods-question-order-block a {
@@ -132,7 +132,7 @@
 }
 
 .goods-question-list-detail li .left-hand {
-	width: 62px
+	width: 52px
 }
 
 .goods-question-list-detail li .hand-block {
@@ -140,6 +140,7 @@
 	color: #757575;
 	width: 36px;
 	height: 36px;
+	padding: 9px;
 	line-height: 36px;
 	text-align: center;
 	border-radius: 50%;
@@ -159,7 +160,7 @@
 	position: absolute;
 	font-size: 12px;
 	bottom: -30px;
-	left: 16px;
+	left: 10px;
 	color: #757575
 }
 
@@ -184,7 +185,7 @@
 }
 
 .goods-question-list-detail li .mid-detail {
-	width: 372px
+	/*width: 372px*/
 }
 
 .goods-question-list-detail li .mid-detail .question-title {
@@ -248,7 +249,7 @@
 }
 
 .goods-question-list-detail li .mid-detail .question-title {
-	width: 520px
+	/*width: 520px*/
 }
 
 .goods-question-list-detail li .mid-detail .answer-content {

@@ -37,4 +37,6 @@ public interface IProductService extends IService<Product> {
     Integer updateProduct(Product product, String userName);
 
     Integer insertProduct(Product product, String userName);
+
+    Long getIdbyNumber(Long productNumber);
 }

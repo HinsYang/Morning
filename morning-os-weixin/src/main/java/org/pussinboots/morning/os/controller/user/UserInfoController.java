@@ -59,7 +59,7 @@ public class UserInfoController extends BaseController {
 		
 		UserVO userVO = userService.getById(SingletonLoginUtils.getUserId());
 		model.addAttribute("userVO", userVO);
-		
+
 		return "/modules/usercenter/user_portal";
 	}
 	

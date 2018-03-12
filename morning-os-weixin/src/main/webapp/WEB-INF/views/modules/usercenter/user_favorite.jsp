@@ -76,6 +76,7 @@
   	//删除收藏商品
   	function favorite_delete(obj, data) {
   		layer.confirm('确认要删除吗？', {
+            offset: ['260px', '78px'],
   			btn : [ '确定', '取消' ] //按钮
   		}, function() {
   			$.ajax({
@@ -86,11 +87,13 @@
   					if (result.code == 1) {
   						$(obj).parent().parent("li").remove();
   						layer.msg('已删除!', {
+                            offset: ['260px', '78px'],
   							icon : 1,
   							time : 1000
   						});
   					} else {
   						layer.alert(result.message, {
+                            offset: ['260px', '78px'],
   							icon : 2
   						});
   					}

@@ -60,4 +60,9 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
 			return null;
 		}
 	}
+
+	@Override
+	public Integer insertComment(Comment comment) {
+		return commentMapper.insert(comment);
+	}
 }

@@ -35,6 +35,7 @@ $(function() {
 	$('#J_cancelOrder').on("click", function() {
 		var orderNumber = $('#J_cancelOrder').attr('data-order-id');
 		layer.confirm('你真的要取消此订单吗?', {
+            offset: ['260px', '78px'],
 			btn : [ '确定', '取消' ] //按钮
 		}, function() {
 			$.ajax({

@@ -130,9 +130,9 @@ $(function() {
 		move();
 	})
 	//鼠标移入移除
-	$('.box').hover(function() {
+	/*$('.box').hover(function() {
 		clearInterval(t);
 	}, function() {
 		t = setInterval(move, 1500);
-	})
+	})*/
 })

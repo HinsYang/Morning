@@ -169,6 +169,7 @@
 					window.location.href = baselocation + '/pass/login';
 				} else {
 					layer.alert(result.message, {
+                        offset: ['260px', '78px'],
 						icon : 2
 					});
 				}
@@ -195,6 +196,7 @@
 					window.location.href = baselocation + '/pass/login';
 				} else {
 					layer.alert(result.message, {
+                        offset: ['260px', '78px'],
 						icon : 2
 					});
 				}
@@ -217,6 +219,7 @@
 			success : function(result) {
 				if (result.code == 1) {
 					layer.msg('发表问题成功!', {
+                        offset: ['260px', '78px'],
 						icon : 1,
 						time : 1000
 					});
@@ -225,6 +228,7 @@
 					window.location.href = baselocation + '/pass/login';
 				} else {
 					layer.alert(result.message, {
+                        offset: ['260px', '78px'],
 						icon : 2
 					});
 				}

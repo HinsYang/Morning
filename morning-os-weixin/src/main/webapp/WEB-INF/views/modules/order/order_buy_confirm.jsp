@@ -17,7 +17,7 @@
       <div class="section section-order">
         <div class="order-info clearfix">
           <div class="fl">
-            <h2 class="title">订单提交成功！去付款咯～</h2>
+            <h2 class="title">订单提交成功！去付款咯</h2>
             <p class="order-time" id="J_deliverDesc">我们将尽快为您发货</p>
             <p class="order-time">请在<span class="pay-time-tip">23小时55分</span>内完成支付, 超时后将取消订单</p>
             <p class="post-info" id="J_postInfo"> 收货信息：${orderShipment.userName} ${orderShipment.userPhone}&nbsp;&nbsp;
@@ -75,9 +75,9 @@
             <ul class="clearfix payment-list J_paymentList J_linksign-customize">
               <li id="J_weixin"><img src="//c1.mifile.cn/f/i/15/pay/wechat0715.jpg" alt="微信支付" style="margin-left: 0;"/></li>
             </ul>
-            <div class="event-desc">
+            <%--<div class="event-desc">
               <p>微信支付：关注小米手机微信公众号，支付成功后可领取3-10元电影票红包。</p>
-              <a href="" class="more" target="_blank">了解更多&gt;</a> </div>
+              <a href="" class="more" target="_blank">了解更多&gt;</a> </div>--%>
           </div>
         </div>
         <%--<div class="payment-box ">
@@ -146,7 +146,7 @@
             </ul>
           </div>
         </div>--%>
-        <div class="payment-box payment-box-last ">
+        <%--<div class="payment-box payment-box-last ">
           <div class="payment-header clearfix">
             <h3 class="title">快捷支付</h3>
             <span class="desc">（支持以下各银行信用卡以及部分银行借记卡）</span> </div>
@@ -200,7 +200,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div>--%>
     </form>
   </div>
 </div>

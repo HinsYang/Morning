@@ -13,7 +13,8 @@ public enum OrderTypeEnum {
 
 	ALL_VALID(0, "1,2,3,4,5,6", "全部有效订单"), 
 	TO_BE_PAID(1, "1", "待支付"), 
-	WAIT_FOR_RECEIVING(2, "3,4,5", "待收货"), 
+	WAIT_FOR_RECEIVING(2, "2,3,4,5", "待收货"),
+	RECEIVING(6, "6", "已收货"),
 	CLOSE(3, "11,12", "已关闭"),
 	ALL_ORDER(4,"1,2,3,4,5,6,11,12","全部订单");
 	

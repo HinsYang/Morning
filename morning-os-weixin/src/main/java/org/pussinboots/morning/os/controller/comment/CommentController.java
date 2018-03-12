@@ -1,21 +1,25 @@
 package org.pussinboots.morning.os.controller.comment;
 
+import java.util.Date;
 import java.util.List;
 
+import io.swagger.models.auth.In;
 import org.apache.commons.lang3.StringUtils;
 import org.pussinboots.morning.common.base.BaseController;
 import org.pussinboots.morning.common.base.BasePageDTO;
 import org.pussinboots.morning.common.constant.CommonReturnCode;
 import org.pussinboots.morning.common.enums.StatusEnum;
 import org.pussinboots.morning.common.support.page.PageInfo;
+import org.pussinboots.morning.order.entity.Order;
+import org.pussinboots.morning.order.entity.OrderProduct;
+import org.pussinboots.morning.order.service.IOrderProductService;
+import org.pussinboots.morning.order.service.IOrderService;
 import org.pussinboots.morning.os.common.result.OsResult;
 import org.pussinboots.morning.os.common.security.AuthorizingUser;
 import org.pussinboots.morning.os.common.util.SingletonLoginUtils;
 import org.pussinboots.morning.product.common.enums.CommentSortEnum;
 import org.pussinboots.morning.product.common.enums.QuestionSortEnum;
-import org.pussinboots.morning.product.entity.Category;
-import org.pussinboots.morning.product.entity.CommentReply;
-import org.pussinboots.morning.product.entity.ProductAttribute;
+import org.pussinboots.morning.product.entity.*;
 import org.pussinboots.morning.product.pojo.vo.CommentVO;
 import org.pussinboots.morning.product.pojo.vo.ProductVO;
 import org.pussinboots.morning.product.service.ICategoryService;
@@ -64,6 +68,8 @@ public class CommentController extends BaseController{
 	private IProductAttributeService productAttributeService;
 	@Autowired
 	private IUserService userService;
+	@Autowired
+	private IOrderProductService orderProductService;
 	
 	/**
 	 * GET 商品详情页面最有帮助的评价
@@ -96,7 +102,7 @@ public class CommentController extends BaseController{
 	public String tileLineList(Model model, @RequestParam(value = "productId", required = true) Long productId,
 			@RequestParam(value = "sort", required = false, defaultValue = "0") Integer sort,
 			@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
-			@RequestParam(value = "limit", required = false, defaultValue = "10") Integer limit) {
+			@RequestParam(value = "limit", required = false, defaultValue = "5") Integer limit) {
 
 		PageInfo pageInfo = new PageInfo(page, limit, QuestionSortEnum.typeOf(sort).getSort(),
 				QuestionSortEnum.typeOf(sort).getOrder());
@@ -210,6 +216,49 @@ public class CommentController extends BaseController{
 			// TODO 用户只要登录,就可以无限点赞,会不会导致恶意攻击
 			Integer goodCount = commentReplyService.updateLike(commentReplyId);
 			return new OsResult(CommonReturnCode.SUCCESS, goodCount);
+		} else {
+			return new OsResult(CommonReturnCode.UNAUTHORIZED);
+		}
+	}
+
+	/**
+	 * POST 评价
+	 * @return
+	 */
+	@ApiOperation(value = "评价", notes = "评价")
+	@PostMapping(value = "/comment")
+	@ResponseBody
+	public Object comment(@RequestParam(value = "orderId", required = true) Long orderId,
+						@RequestParam(value = "productNumbers", required = true) Long[] productNumbers,
+						  @RequestParam(value = "comments", required = true) String[] comments) {
+		AuthorizingUser authorizingUser = SingletonLoginUtils.getUser();
+		if (authorizingUser != null) {
+			UserVO user = userService.getById(authorizingUser.getUserId());
+			List<OrderProduct> orderProducts=orderProductService.listByOrderId(orderId);
+			Integer size=orderProducts.size();
+			Integer count=0;
+			for (int i = 0; i < size; i++) {
+				/*Long productId=productService.getIdbyNumber(productNumbers[i]);*/
+				Comment comment=new Comment();
+				comment.setProductId(productService.getIdbyNumber(productNumbers[i]));
+				comment.setUserId(user.getUserId());
+				comment.setUserName(user.getUserName());
+				comment.setPicImg(user.getPicImg());
+				comment.setOrderId(orderId);
+				comment.setStar(5);
+				comment.setContent(comments[i]);
+				comment.setGoodCount(0);
+				comment.setType(0);
+				comment.setCreateTime(new Date());
+				comment.setCreateBy(user.getUserName());
+				comment.setUpdateTime(new Date());
+				comment.setUpdateBy(user.getUserName());
+				count+=commentService.insertComment(comment);
+				OrderProduct orderProduct=orderProducts.get(i);
+				orderProduct.setCommentStatus(1);
+				count+=orderProductService.updateOrderProduct(orderProduct);
+			}
+			return new OsResult(CommonReturnCode.SUCCESS, count);
 		} else {
 			return new OsResult(CommonReturnCode.UNAUTHORIZED);
 		}

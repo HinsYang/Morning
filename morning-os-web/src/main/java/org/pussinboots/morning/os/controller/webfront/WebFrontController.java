@@ -48,7 +48,7 @@ public class WebFrontController extends BaseController {
 				.listByAdvertId(AdvertTypeEnum.INDEX_CAROUSEL.getType());
 		model.addAttribute("indexCarouselImgs", indexCarouselImgs);
 
-		/*// 首页-广告栏-左部导航栏
+		// 首页-广告栏-左部导航栏
 		List<NavigationBar> indexAdvertLeft = navigationBarService
 				.listByNavigationId(NavigationBarTypeEnum.INDEX_ADVERT_LEFT.getType());
 		model.addAttribute("indexAdvertLeft", indexAdvertLeft);
@@ -56,7 +56,7 @@ public class WebFrontController extends BaseController {
 		// 首页热点广告列表
 		List<AdvertDetail> indexHotAdvertImgs = advertDetailService
 				.listByAdvertId(AdvertTypeEnum.INDEX_HOT_ADVERT.getType());
-		model.addAttribute("indexHotAdvertImgs", indexHotAdvertImgs);*/
+		model.addAttribute("indexHotAdvertImgs", indexHotAdvertImgs);
 		
 		return "/modules/webfront/index";
 	}

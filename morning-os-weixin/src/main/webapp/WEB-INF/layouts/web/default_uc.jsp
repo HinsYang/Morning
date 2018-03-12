@@ -16,23 +16,23 @@
 <sitemesh:write property='head' />
 </head>
 <body>
-<jsp:include page="/WEB-INF/layouts/web/header.jsp" />
+<%--<jsp:include page="/WEB-INF/layouts/web/header.jsp" />--%>
 
 <!-- 轮播top菜单导航引入 -->
 <jsp:include page="/WEB-INF/views/modules/common/site_header.jsp" />
 <!-- 轮播top菜单导航引入 --> 
 
 <!--     导航栏 begin       -->
-<div class="breadcrumbs">
+<%--<div class="breadcrumbs">
   <div class="container-fluid"> <a href="${ctx}/index">首页</a><span class="sep">&gt;</span><span class="title"></span> </div>
-</div>
+</div>--%>
 <!--     导航栏 begin       --> 
 
 <!--     个人中心 begin       -->
 <div class="page-main user-main">
   <div class="container-fluid">
     <div class="row">
-      <div class="span4">
+      <%--<div class="span4">
         <div class="uc-box uc-sub-box">
           <div class="uc-nav-box">
             <div class="box-hd">
@@ -52,7 +52,7 @@
             <div class="box-bd">
               <ul class="uc-nav-list">
                 <li><a href="${ctx}/uc/user/portal">我的个人中心</a></li>
-                <%--<li><a href="">消息通知<i class="J_miMessageTotal"></i></a></li>--%>
+                &lt;%&ndash;<li><a href="">消息通知<i class="J_miMessageTotal"></i></a></li>&ndash;%&gt;
                 <li><a href="${ctx}/uc/user/favorite">喜欢的商品</a></li>
                 <li><a href="${ctx}/uc/user/address">收货地址</a></li>
               </ul>
@@ -66,12 +66,12 @@
               <ul class="uc-nav-list">
                 <li><a href="" target="_blank">个人信息</a></li>
                 <li><a href="" target="_blank">修改密码</a></li>
-                <%--<li><a href="" target="_blank">社区VIP认证</a></li>--%>
+                &lt;%&ndash;<li><a href="" target="_blank">社区VIP认证</a></li>&ndash;%&gt;
               </ul>
             </div>
           </div>
         </div>
-      </div>
+      </div>--%>
       <sitemesh:write property='body' />
     </div>
   </div>

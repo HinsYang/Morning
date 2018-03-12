@@ -1,5 +1,5 @@
 $(function() {
-	show_new_product(); //新品推荐
+	/*show_new_product();*/ //新品推荐
 });
 
 /**
@@ -75,6 +75,10 @@ $(function() {
 		} else if (length <= 30) {
 			num = 5;
 		}
+
+        if (length < 5) {
+            $this.siblings().css('display', 'none');
+        }
 		if (length > 6) {
 			$this.siblings().css('display', 'block');
 		}

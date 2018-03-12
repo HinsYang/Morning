@@ -23,12 +23,12 @@
 <div class="goods-question">
   <div class="container-fluid">
     <div class="row">
-      <div class="span14 goods-question-list-block">
+      <div class="<%--span14 --%>goods-question-list-block">
         <div class="goods-question-order-block"> <a href="${ctx}/question/asklist?productNumber=${product.productNumber}&sort=1" class="${sort eq 1 ? 'current':''} J_questionHelp">最有帮助</a> <span class="sep">|</span> <a href="${ctx}/question/asklist?productNumber=${product.productNumber}&sort=0" class="${sort eq 0 ? 'current':''} J_questionNew">最新</a> </div>
-        <div class="goods-question-ask-block">
+        <%--<div class="goods-question-ask-block">
           <input type="text" placeholder="输入你的提问" class="input-block J_inputQuestion" data-pagesize="10">
           <div class="btn btn-primary question-btn J_btnQuestion" onclick="add_question(this);">提问</div>
-        </div>
+        </div>--%>
         <ul class="goods-question-list-detail" id="J_goodsQuestionBlock">
           <c:forEach items="${questions}" var="question">
             <li data-id="${question.questionId}">
@@ -40,12 +40,13 @@
                 <h3 class="question-title"><a target="_blank">${question.content}</a></h3>
                 <div class="answer-content figcaption">
                   <p>${question.answerContent}</p>
+                  <div class="answer-content-date"><fmt:formatDate value="${question.answerTime}" pattern="yyyy年MM月dd日" /></div>
                 </div>
               </div>
-              <div class="right-date float">
+              <%--<div class="right-date float">
                 <div class="question-title-date"><fmt:formatDate value="${question.createTime}" pattern="yyyy年MM月dd日" /></div>
                 <div class="answer-content-date"><fmt:formatDate value="${question.answerTime}" pattern="yyyy年MM月dd日" /></div>
-              </div>
+              </div>--%>
             </li>
           </c:forEach>
         </ul>
@@ -62,7 +63,7 @@
           </div>
         </div>
       </div>
-      <div class="span6 goods-detail-info-block">
+      <div class="<%--span6 --%>goods-detail-info-block">
         <div class="goods-detail-info">
           <div class="goods-img-block"> <a target="_blank" href="${ctx}/detail/${product.productNumber}" title="${product.name}"> <img src="${ctximg}/${product.picImg}" class="J_cartBigImg" alt="${product.name}"> </a> </div>
           <div class="goods-name J_cartGoodsName"> ${product.name} </div>
@@ -121,6 +122,7 @@
 					window.location.href = baselocation + '/pass/login';
 				} else {
 					layer.alert(result.message, {
+                        offset: ['260px', '78px'],
 						icon : 2
 					});
 				}
@@ -136,6 +138,7 @@
 		data.productId = productId;
 		data.content = $(obj).prev().val()  ;
 		layer.confirm('您确认提交此问题吗？', {
+            offset: ['260px', '78px'],
 			btn : [ '确定', '取消' ] //按钮
 		}, function() {
 			$.ajax({
@@ -146,6 +149,7 @@
 				success : function(result) {
 					if (result.code == 1) {
 						layer.msg('发表问题成功!', {
+                            offset: ['260px', '78px'],
 							icon : 1,
 							time : 1000
 						});
@@ -155,6 +159,7 @@
 						window.location.href = baselocation + '/pass/login';
 					} else {
 						layer.alert(result.message, {
+                            offset: ['260px', '78px'],
 							icon : 2
 						});
 					}

@@ -317,7 +317,7 @@ a:hover {
 }
 
 .span4 {
-	width: 234px
+	width: 204px
 }
 
 .span5 {
@@ -520,10 +520,10 @@ a:hover {
 }
 
 .btn-small {
-	width: 118px;
-	height: 28px;
-	font-size: 9pt;
-	line-height: 28px
+	width: 49%;
+	height: 35px;
+	font-size: 14px;
+	line-height: 35px
 }
 
 .btn-large {
@@ -1325,7 +1325,9 @@ textarea.input-text {
 	background: #f5f5f5;
 	color: #616161;
 	font-size: 9pt;
-	line-height: 40px
+	line-height: 40px;
+	padding-left:15px;
+	padding-right: 15px;
 }
 
 .breadcrumbs a {
@@ -1417,7 +1419,7 @@ textarea.input-text {
 
 .xm-carousel-col-5-list li {
 	float: left;
-	width: 234px
+	width: 204px
 }
 
 .xm-controls .control {
@@ -1892,7 +1894,7 @@ textarea.input-text {
 
 .site-header .header-search {
 	float: right;
-	margin-top: 18px;
+	margin-top: 4%;
 	width: 80%;
 }
 
@@ -2252,8 +2254,8 @@ textarea.input-text {
 }
 
 .site-footer .footer-service {
-	padding: 5% 0;
-	border-bottom: 1px solid #e0e0e0
+	padding: 4% 0;
+	border: 1px solid #e0e0e0
 }
 
 .site-footer .list-service {

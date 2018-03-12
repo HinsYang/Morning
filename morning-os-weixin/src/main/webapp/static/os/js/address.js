@@ -164,6 +164,7 @@ function saveAddr(a) {
  */
 function address_delete(obj, data) {
 	layer.confirm('确认要删除吗？', {
+        offset: ['260px', '78px'],
 		btn : [ '确定', '取消' ] //按钮
 	}, function() {
 		$.ajax({

@@ -9,6 +9,7 @@
     <mapping path="/cart/topbar" exclue="true"/>
     <mapping path="/comment/tileLineList" exclue="true"/>
     <mapping path="/swagger-ui.html" exclue="true"/>
+    <!--<mapping path="/uc/order/comment/*" exclue="true"/>-->
     
   	<!-- 前端商城布局 -->
     <mapping>

@@ -90,5 +90,10 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 		return productMapper.insertProduct(product);
 	}
 
+	@Override
+	public Long getIdbyNumber(Long productNumber) {
+		return productMapper.getIdByNumber(productNumber);
+	}
+
 
 }

@@ -23,8 +23,8 @@
                 <li><a href="${indexCarouselImg.href}" title="${indexCarouselImg.title}" target="_blank"><img src="${ctximg }/${indexCarouselImg.picImg}" alt="${indexCarouselImg.title }"></a></li>
               </c:forEach>
             </ul>
-            <ol class="oll">
-            </ol>
+            <%--<ol class="oll">
+            </ol>--%>
             <%--<span class="left btnL glyphicon glyphicon-menu-right"></span> <span class="right btnL glyphicon glyphicon-menu-left"></span> </div>--%>
         </div>
       </div>

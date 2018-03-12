@@ -6,6 +6,7 @@ import org.pussinboots.morning.common.base.BasePageDTO;
 import org.pussinboots.morning.common.support.page.PageInfo;
 import org.pussinboots.morning.order.common.enums.OrderTypeEnum;
 import org.pussinboots.morning.order.pojo.vo.OrderVO;
+import org.pussinboots.morning.order.service.IOrderProductService;
 import org.pussinboots.morning.order.service.IOrderService;
 import org.pussinboots.morning.os.common.util.SingletonLoginUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,10 @@ public class UserOrderController extends BaseController {
 	
 	@Autowired
 	private IOrderService orderService; 
-	
+	@Autowired
+	private IOrderProductService orderProductService;
+
+
 	/**
 	 * GET 我的订单
 	 * @param model
@@ -55,7 +59,7 @@ public class UserOrderController extends BaseController {
 		Integer page = StringUtils.isNumeric(reqPage) ? Integer.valueOf(reqPage) : 1;
 		
 		PageInfo pageInfo = new PageInfo(limit, page);
-		
+
 		BasePageDTO<OrderVO> basePageDTO = orderService.list(SingletonLoginUtils.getUserId(), pageInfo,
 				OrderTypeEnum.typeOf(type).getTypeValue(), search);	
 		
@@ -79,5 +83,12 @@ public class UserOrderController extends BaseController {
 		OrderVO orderVO = orderService.getOrder(SingletonLoginUtils.getUserId(), orderNumber);
 		model.addAttribute("orderVO", orderVO);
 		return "/modules/usercenter/user_order_view";
+	}
+
+	@GetMapping(value = "/comment/{orderId}")
+	public Object orderCommentList(Model model, @PathVariable("orderId") Long orderId){
+		OrderVO orderVO=orderService.getOrderById(orderId);
+		model.addAttribute("orderVO", orderVO); // 订单列表
+		return "/modules/usercenter/user_order_comment";
 	}
 }

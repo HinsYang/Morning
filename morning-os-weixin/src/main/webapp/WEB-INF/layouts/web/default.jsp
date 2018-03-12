@@ -4,8 +4,7 @@
 <html>
   <head>
     <title><sitemesh:write property='title' /> - 但行好事，莫问前程</title>
-	  <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="author" content="叮咚Morning. - 但行好事，莫问前程。" />
+	  <meta name="author" content="叮咚Morning. - 但行好事，莫问前程。" />
 	<meta name="keywords" content="叮咚商城,叮咚Morning,叮咚公益商城,公益,电子商城,叮咚社区,公益商城,在线购物,社会责任">
 	<meta name="description" content="叮咚Morning公益商城是中国公益性在线电子商城，以商城B2C模式运营的公益在线商城，是一家致力于将传统公益商城互联网化的创新公益商城。">
 	<link rel="shortcut icon" href="${ctximg}/default/ico/favicon.ico" type="image/x-icon" />
