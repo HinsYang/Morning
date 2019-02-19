@@ -1,6 +1,6 @@
 $(function() {
 	//showsectime(); //网站计时器
-	//show_cart_umber(); // 购物车商品数量
+	show_cart_umber(); // 购物车商品数量
 })
 
 /**

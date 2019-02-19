@@ -46,10 +46,10 @@ public class ProductRecommendController extends BaseController {
 	}
 	
 	/**
-	 * GET 分类热门
+	 * GET 为你推荐
 	 * @return
 	 */
-	@ApiOperation(value = "分类热门", notes = "分类热门")
+	@ApiOperation(value = "为你推荐", notes = "为你推荐")  
 	@GetMapping(value = "/popular")
 	public Object listPopular(Model model) {
 		List<ProductVO> products = productRecommendService.listByRecommendId(ProductRecommendTypeEnum.POPULAR.getType());
