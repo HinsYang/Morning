@@ -498,7 +498,7 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>${maven-resources-plugin.version}</version>
 				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
+					<encoding>utf-8</encoding>
 				</configuration>
 			</plugin>
 

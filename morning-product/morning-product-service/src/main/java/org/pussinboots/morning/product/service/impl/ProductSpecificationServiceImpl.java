@@ -45,10 +45,10 @@ public class ProductSpecificationServiceImpl extends ServiceImpl<ProductSpecific
 		// 根据产品ID和类型状态查找类型列表
 		List<KindVO> kindVOs = kindMapper.listByProductId(productId, status);
 
-		if(kindVOs == null){
+		/*if(kindVOs == null){
 			System.out.println("................................");
 			System.out.println("kindVOs没有被实例化");
-		}
+		}*/
 		
 		Map<String, Object> resultMap = new HashMap<>();
 		if (kindVOs.isEmpty()) {
